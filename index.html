@@ -30,6 +30,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 @media(max-width:620px){.wrap{width:min(100% - 22px,980px)}.focus{grid-template-columns:1fr}.clock{text-align:left}.flight-grid{grid-template-columns:1fr}.todo,.info-grid{grid-template-columns:1fr}.hero{padding-top:25px}.time{font-size:23px}}
 @media(prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg:#171b19;--paper:#222925;--ink:#f0eee6;--muted:#a8afa7;--line:#39423c;--green:#a9c4ac;--green2:#2e4035;--orange:#e1a477;--orange2:#49352a;--blue:#9ab9ca;--blue2:#293d48;--shadow:0 12px 34px rgba(0,0,0,.22)}:root:not([data-theme]) .hero{background:radial-gradient(circle at 90% 5%,#47392e 0,transparent 32%),radial-gradient(circle at 4% 20%,#2d4035 0,transparent 34%)}}
 .map-tools button.active,.day-tabs button.active{color:var(--paper)}
+.focus-events{display:grid;grid-template-columns:1fr 1fr;gap:12px}.focus-events .count{flex-wrap:wrap}.focus-clock{text-align:left;margin:12px 3px}.focus-clock strong{display:inline-block;margin:0 10px}@media(max-width:620px){.focus-events{grid-template-columns:1fr}}
 </style><script>try{const theme=localStorage.getItem('travel-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(_){}</script>
 </head>
 <body>
@@ -43,10 +44,11 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 <div class="card section"><strong>🐶 同行伙伴 · 支付宝</strong><p class="sub" style="margin-bottom:0">支付宝是一只辅助犬，与田子辰一起从深圳出发。在成都与杨秉尚汇合后，两人一犬共同参与全部行程。</p></div>
   <section class="section">
     <div class="section-head"><h2>此刻关注</h2><span class="kicker">NEXT UP</span></div>
-    <div class="card focus">
-      <div><small>距离田子辰与支付宝的去程航班起飞</small><div class="next-title">11月26日 · 深圳 → 成都</div><div class="count" id="countdown"><div class="unit"><b>--</b><span>天</span></div><div class="unit"><b>--</b><span>时</span></div><div class="unit"><b>--</b><span>分</span></div><div class="unit"><b>--</b><span>秒</span></div></div></div>
-      <div class="clock"><span>中国标准时间 · UTC+8</span><strong id="cnclock">--:--:--</strong><span id="today">----</span></div>
+    <div class="focus-events">
+      <article class="card"><small class="sub">田子辰与支付宝 🐶 · 四川航空 3U8708</small><div class="next-title">深圳 → 成都</div><div class="sub">2026年11月26日 20:25 起飞 · UTC+8</div><div class="count" id="countdown"></div></article>
+      <article class="card"><small class="sub">杨秉尚 · 中国南方航空 CZ3413</small><div class="next-title">广州 → 成都</div><div class="sub">2026年11月26日 20:30 起飞 · UTC+8</div><div class="count" id="countdownYang"></div></article>
     </div>
+    <div class="clock focus-clock"><span>中国标准时间 · UTC+8</span><strong id="cnclock">--:--:--</strong><span id="today">----</span></div>
   </section>
 
   <section class="section">
@@ -141,11 +143,14 @@ days.forEach((d,i)=>{
  panels.appendChild(p);
 });
 function selectDay(i){[...tabs.children].forEach((b,j)=>b.classList.toggle('active',i===j));[...panels.children].forEach((p,j)=>p.classList.toggle('active',i===j));}
-const target=new Date('2026-11-26T20:25:00+08:00');
+const departures=[['countdown',new Date('2026-11-26T20:25:00+08:00')],['countdownYang',new Date('2026-11-26T20:30:00+08:00')]];
 function tick(){
- const now=new Date(), diff=Math.max(0,target-now);
+ const now=new Date();
+ departures.forEach(([id,target])=>{
+ const diff=Math.max(0,target-now);
  const vals=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];
- document.getElementById('countdown').innerHTML=vals.map((v,i)=>`<div class="unit"><b>${String(v).padStart(2,'0')}</b><span>${['天','时','分','秒'][i]}</span></div>`).join('');
+ document.getElementById(id).innerHTML=vals.map((v,i)=>`<div class="unit"><b>${String(v).padStart(2,'0')}</b><span>${['天','时','分','秒'][i]}</span></div>`).join('');
+ });
  const cn=new Date(now.getTime()+8*3600000);document.getElementById('cnclock').textContent=cn.toISOString().slice(11,19);document.getElementById('today').textContent=cn.toISOString().slice(0,10)+' · 北京时间';
 }
 tick();setInterval(tick,1000);
