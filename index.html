@@ -31,6 +31,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 @media(prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg:#171b19;--paper:#222925;--ink:#f0eee6;--muted:#a8afa7;--line:#39423c;--green:#a9c4ac;--green2:#2e4035;--orange:#e1a477;--orange2:#49352a;--blue:#9ab9ca;--blue2:#293d48;--shadow:0 12px 34px rgba(0,0,0,.22)}:root:not([data-theme]) .hero{background:radial-gradient(circle at 90% 5%,#47392e 0,transparent 32%),radial-gradient(circle at 4% 20%,#2d4035 0,transparent 34%)}}
 .map-tools button.active,.day-tabs button.active{color:var(--paper)}
 .focus-events{display:grid;grid-template-columns:1fr 1fr;gap:12px}.focus-events .count{flex-wrap:wrap}.focus-clock{text-align:left;margin:12px 3px}.focus-clock strong{display:inline-block;margin:0 10px}@media(max-width:620px){.focus-events{grid-template-columns:1fr}}
+.daily-map{margin:14px 0;padding:12px;background:var(--green2);border-radius:12px}.daily-map summary,.place-info summary{cursor:pointer;font-size:13px;font-weight:600}.place-info{margin-top:10px}.nav-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.nav-link{display:inline-block;padding:7px 9px;border:1px solid var(--line);border-radius:10px;font-size:12px;background:var(--paper)}.travel-pill{font-size:11px;border-radius:10px;padding:6px 9px;background:var(--green2);margin-top:8px}.timecell{overflow-wrap:anywhere}.day-title{gap:8px;flex-wrap:wrap}.map-svg .route-line{stroke-width:2}.event p a{color:var(--blue)}
 </style><script>try{const theme=localStorage.getItem('travel-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(_){}</script>
 </head>
 <body>
@@ -64,20 +65,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 
   <section class="section">
     <div class="section-head"><h2>旅行地图</h2><span class="kicker">SCHEMATIC · NOT TO SCALE</span></div>
-    <div class="card map-card">
-      <svg class="map-svg" viewBox="0 0 700 330" role="img" aria-label="成都与大理旅行示意图">
-        <path d="M30 250 C110 180 140 290 240 220 S390 160 470 210 S580 290 670 170" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="28" stroke-linecap="round"/>
-        <path d="M45 70 C160 20 230 90 310 55 S490 30 650 90" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-        <path d="M80 260 Q220 110 355 145 T600 240" class="route-line"/>
-        <circle cx="80" cy="260" r="8" class="dot"/><circle cx="355" cy="145" r="8" class="dot"/><circle cx="600" cy="240" r="8" class="dot"/>
-        <text x="55" y="290" class="city">成都</text><text x="55" y="307" class="minor">11.26 起 · 双流机场</text>
-        <text x="325" y="115" class="city">途中</text><text x="325" y="132" class="minor">城际交通待确认</text>
-        <text x="560" y="275" class="city">大理</text><text x="560" y="292" class="minor">住宿与抵达待确认</text>
-        <text x="350" y="36" text-anchor="middle" class="minor">成都 — 大理具体交通路线尚未提供</text>
-      </svg>
-      <div class="map-tools"><button class="active" type="button">总览示意</button><button type="button" onclick="alert('具体景点地址尚未提供，补齐后可在这里生成逐日导航。')">逐日路线待补充</button></div>
-      <div class="sub" style="font-size:12px">此图仅表示旅行城市顺序，不代表真实道路、里程或交通方式。景点、酒店地址确认后再补充准确地图和高德导航入口。</div>
-    </div>
+    <div class="card map-card"><div class="map-tools"><button type="button" onclick="showRoute('overview')">城市总览</button><button type="button" onclick="showRoute(0)">11.26夜宵</button><button type="button" onclick="showRoute(1)">11.27路线</button><button type="button" onclick="showRoute(2)">11.28路线</button><button type="button" onclick="showRoute('all')">显示全部地点</button></div><div id="routeOverview"></div><p class="sub" style="font-size:12px">点图中地点打开高德，详细介绍见当日行程。图示表示站点顺序，不表示真实距离或地铁线路；酒店地址待定，不用于规划。市内固定乘地铁，换乘、出口和末班以当日信息为准。</p></div>
   </section>
 
   <section class="section">
@@ -93,10 +81,10 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 <div>11月24日20:00前 · 完成四川航空辅助犬同行申报<small>3U8708 深圳 → 成都 · UTC+8 · 待办理</small></div>
       <div>确认田子辰的3U8708是否出票<small>3U8708 出票状态待确认；杨秉尚的 CZ3413 已确认订票（公开网页不展示敏感编号）</small></div>
       <div>补充12月3日返程航班<small>核对最终抵达广州的时间与机场</small></div>
-      <div>确认成都、大理住宿<small>酒店名称、入住退房日期、地址；订单号不公开展示</small></div>
+      <div>确认成都、大理住宿<small>酒店地点待定，本次路线不依赖酒店地址；订单号不公开展示</small></div>
       <div>确认成都 → 大理交通<small>航班／火车／其他交通方式及班次</small></div>
       <div>整理景点门票与预约<small>核对预约规则、开放时间和闭馆日</small></div>
-      <div>补充每日游玩安排<small>按已出票交通和酒店位置反推路线</small></div>
+      <div>补充每日游玩安排<small>按已确认的出发地点和地铁运营信息规划路线</small></div>
     </div>
   </section>
 
@@ -122,32 +110,292 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
     </div>
   </section>
 </main>
-<footer class="footer"><div class="wrap">成都 · 大理　/　两人一犬的八日旅行<br>本页面为离线旅行手册；待补资料确认后可继续完善路线与导航。</div></footer>
+<footer class="footer"><div class="wrap">成都 · 大理　/　两人一犬的八日旅行<br>地点可点击打开高德地图；市内固定乘地铁，具体换乘及末班车以出行当日信息为准。酒店地址待定。</div></footer>
 <script>
 const days=[
-["11月26日","周四","深圳／广州 → 成都","田子辰与辅助犬支付宝从深圳出发，杨秉尚从广州出发，晚间在成都双流机场汇合；之后两人一犬共同参与全部行程。落地后前往酒店方式待确认。",[
-["18:30前","杨秉尚｜建议抵达广州白云T2","预留值机、托运与安检时间；值机D／E／F区，近出发大厅41—43号门。","出行提醒"],
-["19:45","杨秉尚｜值机截止参考","按南航广州起飞前45分钟停止办理乘机手续推算；请以订单和当日通知为准。","注意"],
-["20:25","田子辰与支付宝 🐶｜3U8708 起飞","深圳宝安 T3 → 成都双流 T1；截图方案，出票状态待核实。","航班"],
-["20:30","杨秉尚｜CZ3413 起飞","广州白云 T2 → 成都双流 T1；已确认订票。空客 A321-200 窄体机；值机D／E／F区，近出发大厅41—43号门。登机口及实时动态以当日通知为准。","航班"],
-["22:55 / 23:00","预计抵达成都双流","两班计划到达时间相差约5分钟；实际时间以航班动态为准。","注意"]
-]],
-["11月27日","周五","成都","当天游览安排待补充；需结合酒店位置、预约和开放时间安排。",[["待定","成都行程","景点、餐饮及交通待确认。","待补充"]]],
-["11月28日","周六","成都","周末客流可能较大，热门景点建议提前核实预约要求。",[["待定","成都行程","景点、餐饮及交通待确认。","待补充"]]],
-["11月29日","周日","成都 → 大理（暂定）","城市切换日期尚未确认，需以城际交通订单为准。",[["待定","城际交通","成都至大理交通方式、班次和抵达时间待补充。","待补充"]]],
-["11月30日","周一","大理","当天游览安排待补充。",[["待定","大理行程","景点、餐饮及交通待确认。","待补充"]]],
-["12月1日","周二","大理","当天游览安排待补充。",[["待定","大理行程","景点、餐饮及交通待确认。","待补充"]]],
-["12月2日","周三","大理","返程前一天；建议根据12月3日返程时间确定活动范围。",[["待定","大理行程","景点、餐饮及交通待确认。","待补充"]]],
-["12月3日","周四","大理 → 广州","返程航班未提供；需按实际起飞时间倒推离店和前往机场／车站时间。",[["待定","返程","返程班次、起飞时间和抵达广州时间待补充。","待补充"]]]
+ [
+  "11月26日",
+  "周四",
+  "深圳／广州 → 成都",
+  "田子辰与辅助犬支付宝从深圳出发，杨秉尚从广州出发；晚间成都双流T1汇合，夜宵跨入11月27日凌晨。夜宵以门店仍接单且体力允许为前提。",
+  [
+   [
+    "18:30前",
+    "杨秉尚｜建议抵达广州白云T2",
+    "预留值机、托运与安检时间；值机D／E／F区，近出发大厅41—43号门。",
+    "出行提醒"
+   ],
+   [
+    "19:45",
+    "杨秉尚｜值机截止参考",
+    "按南航广州起飞前45分钟停止办理乘机手续推算；请以订单和当日通知为准。",
+    "注意"
+   ],
+   [
+    "20:25",
+    "田子辰与支付宝 🐶｜3U8708 起飞",
+    "深圳宝安 T3 → 成都双流 T1；截图方案，出票状态待核实。",
+    "航班"
+   ],
+   [
+    "20:30",
+    "杨秉尚｜CZ3413 起飞",
+    "广州白云 T2 → 成都双流 T1；已确认订票。空客 A321-200 窄体机；值机D／E／F区，近出发大厅41—43号门。登机口及实时动态以当日通知为准。",
+    "航班"
+   ],
+   [
+    "22:55 / 23:00",
+    "预计抵达成都双流",
+    "两班计划到达时间相差约5分钟；实际时间以航班动态为准。",
+    "注意"
+   ],
+   [
+    "11/27凌晨（候选）",
+    "夜宵｜峨眉山原汁双双烧烤（金牛店）",
+    "落地后需集合、取行李并乘地铁。门店公开页列营业至01:00，务必确认仍接单；但两班预计23:00左右抵达，按地铁固定交通很难赶到，建议改到后续夜晚；若无法乘地铁则不前往。",
+    "条件安排",
+    "bbq",
+    "地铁末班风险：成都双流T1往市区方向10号线末班约23:15；计划22:55／23:00抵达，尚需下机、取行李、集合及后续换乘，夜宵难以实现。建议改到其他夜晚；按地铁固定安排不以出租车替代。",
+    "https://www.cdairport.com/traffic3.aspx?t=36"
+   ]
+  ]
+ ],
+ [
+  "11月27日",
+  "周五",
+  "办事日 + 城西 + 市中心",
+  "上午固定顺序：09:00犀浦校园路派出所办理居住证续签、犬证；办完乘地铁前往郫都区畜牧兽医服务中心（郫筒新南街153号）办理动物检疫合格证明。尽量11:30前出发进城；若手续延迟，先办完再顺延午餐、缩短下午活动，保留固定晚餐。酒店地址尚未确定，本日不按酒店规划。市内交通固定地铁，近距离街区步行衔接。",
+  [
+   [
+    "09:00",
+    "犀浦校园路派出所｜居住证续签、犬证",
+    "田子辰带支付宝同行。按固定时间到达；出发前向派出所确认具体窗口、材料及犬证办理范围。",
+    "固定办事",
+    "police",
+    "按高德地铁导航至犀浦片区最近站，出站步行前往校园路555号；预留进出站和步行时间。",
+    "https://bwc.swjtu.edu.cn/bszn/zsyw.htm"
+   ],
+   [
+    "办完后",
+    "郫都区畜牧兽医服务中心｜动物检疫合格证明",
+    "地址：郫筒新南街153号。出发前核实预约、受理时间、所需材料，以及27日开具的证明是否适用于29日出行。",
+    "固定办事",
+    "vet",
+    "地铁6号线从犀浦往望丛祠方向至郫筒站，出站后步行至地址；以高德实时路线、出口和步行导航为准。"
+   ],
+   [
+    "尽量11:30前",
+    "完成手续后出发进城",
+    "这是争取目标，不是办事截止；手续未完成时继续办理。提前查看午餐排队情况，下午安排可压缩。",
+    "弹性时间",
+    "",
+    "郫筒站乘地铁6号线往犀浦方向，按高德实时方案换乘前往蜀汉路店附近；全程地铁加步行。"
+   ],
+   [
+    "12:30左右",
+    "午餐｜陶德砂锅（蜀汉路店）",
+    "两人约120元；提前线上取号，进店前说明持证导听辅助犬，争取靠边座位。实际到店时间随办事进度顺延。",
+    "餐饮",
+    "taode"
+   ],
+   [
+    "14:00左右",
+    "人民公园慢行",
+    "以户外慢行为主，给支付宝饮水、休息；办事或午餐延迟时缩短停留。",
+    "游览",
+    "park",
+    "由蜀汉路店附近按高德地铁路线前往人民公园，出站后步行；具体站点和换乘以当天导航为准。"
+   ],
+   [
+    "园内可选",
+    "鹤鸣茶社",
+    "可选喝茶休息；茶水另计，提前沟通支付宝同行及座位，拥挤时放弃。",
+    "休息",
+    "tea",
+    "园内步行，随休息节奏"
+   ],
+   [
+    "15:30左右",
+    "宽窄巷子开放街区",
+    "从人民公园步行或乘一站地铁衔接；只逛开放街区，不进入收费小院。时间紧则缩短，给晚餐留足排队余量。",
+    "游览",
+    "kuanzhai",
+    "人民公园至宽窄巷子按高德步行／地铁实时路线衔接；不安排出租车或网约车。"
+   ],
+   [
+    "16:00",
+    "核对冒椒火辣线上放号并取号",
+    "按你提供的16点放号安排设置提醒；当天放号和取号规则以门店平台为准。",
+    "取号提醒",
+    "maojiao"
+   ],
+   [
+    "17:30左右",
+    "晚餐｜冒椒火辣（奎星楼创始店）",
+    "固定晚餐，两人约140元。留意地面湿滑和支付宝脚垫；排队时间变化时以实际叫号为准。",
+    "固定晚餐",
+    "maojiao",
+    "宽窄巷子到奎星楼街步行衔接；如需搭乘地铁，以高德实时导航为准。",
+    "https://www.mjhlccx.com/store-info"
+   ],
+   [
+    "饭后可选",
+    "339电视塔户外夜景／结束游览",
+    "有体力再乘地铁前往户外看夜景，不安排登塔；往返时间长或影响休息就取消，直接结束本日行程。",
+    "可取消",
+    "tower",
+    "按高德地铁导航往返，留意末班车；疲惫时不再加点。"
+   ]
+  ]
+ ],
+ [
+  "11月28日",
+  "周六",
+  "市中心 → 东郊记忆 → 城北收尾",
+  "按你给的顺序：草堂北路午餐 → IFS／春熙路户外街区 → 东郊记忆 → 解放西街晚餐。夜间九眼桥或玉林只选一个，也可以全部取消；酒店地址尚未确定，不从酒店规划路线。全日市内交通固定地铁，近距离步行衔接，返程留意末班车。",
+  [
+   [
+    "11:30左右",
+    "午餐｜乐山鲜知味钵钵鸡（草堂北路店）",
+    "钵钵鸡＋鸡汤饭，两人预算约70元；优先沟通外摆／靠边大厅，提前确认辅助犬接待。",
+    "餐饮",
+    "bobo",
+    "",
+    "https://gs.ctrip.com/html5/you/foods/Chengdu104/5235956.html"
+   ],
+   [
+    "13:00左右",
+    "IFS国金中心／春熙路户外街区",
+    "以公共步行街区域为主；不预设进入商场、屋顶或内部店铺。人多时牵引靠边慢行。",
+    "游览",
+    "ifs",
+    "草堂北路至IFS按高德地铁路线前往，出站步行至户外街区；具体换乘以当日导航为准。"
+   ],
+   [
+    "15:00左右",
+    "东郊记忆",
+    "乘地铁前往开放式文创园区，安排饮水和休息；展馆、演出、商铺不默认包含。周六活动人流临近出发再核对。",
+    "游览",
+    "east",
+    "IFS／春熙路至东郊记忆按高德地铁路线前往，出站步行入园；不安排出租车或网约车。"
+   ],
+   [
+    "17:30左右",
+    "晚餐｜毛记和意冒菜（解放西街店）",
+    "两人约100元，招牌冒牛肉；提前确认营业时间、最后接单及支付宝同行。",
+    "餐饮",
+    "maoji",
+    "东郊记忆至解放西街按高德地铁路线前往，出站步行到店；以当天换乘和运营信息为准。"
+   ],
+   [
+    "饭后任选①",
+    "兰桂坊／九眼桥河边散步",
+    "与玉林二选一，仅河边散步，不安排酒吧消费。城北晚餐后前往城南会增加地铁往返时间；人流、噪声较大或临近末班时取消。",
+    "夜间备选",
+    "lan",
+    "按高德地铁路线往返，先核对末班车；不安排出租车或网约车。"
+   ],
+   [
+    "饭后任选②",
+    "玉林路小酒馆街区慢行",
+    "与九眼桥二选一，不预设进入酒吧；若返程地铁时间紧或体力不足，取消夜间活动。",
+    "夜间备选",
+    "yulin",
+    "按高德地铁路线往返，先核对末班车；不安排出租车或网约车。"
+   ],
+   [
+    "睡前",
+    "整理行李与29日出行资料",
+    "29日航班号、机场、时刻和辅助犬同行申报状态待补；资料确认后再倒推地铁出发时间。",
+    "行前准备",
+    "",
+    "酒店地址不作为路线起点；按已确认的出发地点与地铁运营时间规划。"
+   ]
+  ]
+ ],
+ [
+  "11月29日",
+  "周日",
+  "成都 → 大理（29日航班待补）",
+  "计划29日乘机，航班号、起降机场与时刻待补；目的地及城市衔接以实际订单为准。收到订单后再安排出发时间和当天活动。",
+  [
+   [
+    "待补",
+    "11月29日航班",
+    "航班号、起降机场、航站楼、时刻、出票与辅助犬同行申报状态待补。",
+    "交通待确认"
+   ]
+  ]
+ ],
+ [
+  "11月30日",
+  "周一",
+  "大理",
+  "当天游览安排待补充。",
+  [
+   [
+    "待定",
+    "大理行程",
+    "景点、餐饮及交通待确认。",
+    "待补充"
+   ]
+  ]
+ ],
+ [
+  "12月1日",
+  "周二",
+  "大理",
+  "当天游览安排待补充。",
+  [
+   [
+    "待定",
+    "大理行程",
+    "景点、餐饮及交通待确认。",
+    "待补充"
+   ]
+  ]
+ ],
+ [
+  "12月2日",
+  "周三",
+  "大理",
+  "返程前一天；建议根据12月3日返程时间确定活动范围。",
+  [
+   [
+    "待定",
+    "大理行程",
+    "景点、餐饮及交通待确认。",
+    "待补充"
+   ]
+  ]
+ ],
+ [
+  "12月3日",
+  "周四",
+  "大理 → 广州",
+  "返程航班未提供；需按实际起飞时间倒推离店和前往机场／车站时间。",
+  [
+   [
+    "待定",
+    "返程",
+    "返程班次、起飞时间和抵达广州时间待补充。",
+    "待补充"
+   ]
+  ]
+ ]
 ];
-const tabs=document.getElementById('dayTabs'), panels=document.getElementById('dayPanels');
-days.forEach((d,i)=>{
- const b=document.createElement('button');b.textContent='D'+(i+1)+' '+d[0];b.className=i===0?'active':'';b.onclick=()=>selectDay(i);tabs.appendChild(b);
- const p=document.createElement('div');p.className='card day-panel'+(i===0?' active':'');
- p.innerHTML=`<div class="day-title"><strong>D${i+1} · ${d[2]}</strong><span class="sub">${d[0]} ${d[1]}</span></div><p class="sub" style="font-size:13px">${d[3]}</p><div class="timeline">${d[4].map(e=>`<div class="timecell">${e[0]}<br><small>UTC+8</small></div><div class="event"><b>${e[1]}</b><p>${e[2]}</p><span class="tag">${e[3]}</span></div>`).join('')}</div>`;
- panels.appendChild(p);
-});
-function selectDay(i){[...tabs.children].forEach((b,j)=>b.classList.toggle('active',i===j));[...panels.children].forEach((p,j)=>p.classList.toggle('active',i===j));}
+const places={"ctu":["成都双流国际机场 T1","成都市双流区成都双流国际机场T1","两班航班计划相差约5分钟；下机、滑行、取行李和集合均需时间。"],"bbq":["峨眉山原汁双双烧烤（金牛店）","成都市金沙北一路38号 峨眉山原汁双双烧烤金牛店","地址：成都市金沙北一路38号。公开门店页列营业时间17:30—次日01:00；出发前确认当晚最后接单时间及辅助犬接待。按地铁固定交通，航班落地时间与T1末班车很接近，建议改到其他夜晚。","https://hk.trip.com/restaurant/china/chengdu/detail/restaurant-15212626/"],"police":["校园路派出所（犀浦）","成都市郫都区犀浦街道校园路555号 校园路派出所","09:00固定办理居住证续签、犬证；先确认窗口、材料和犬证办理范围。校园路555号，按高德地铁导航并预留出站步行。"],"vet":["郫都区畜牧兽医服务中心","成都市郫都区郫筒街道新南街153号","郫筒新南街153号。郫筒站可乘地铁6号线到达附近，再步行；办理时间、材料、预约和证明有效期须提前向受理点核实。"],"taode":["陶德砂锅（蜀汉路店）","成都市金牛区蜀汉路494号 陶德砂锅蜀汉路店","午餐约120元／两人；地址按蜀汉路494号附3号，公开平台亦出现附2号，入口到店前核实。提前取号并确认持证导听辅助犬同行。"],"park":["人民公园","成都市青羊区人民公园","以户外慢行为主；给支付宝饮水休息。是否可带辅助犬及具体规定以公园现场和管理方说明为准。"],"tea":["鹤鸣茶社","成都市人民公园鹤鸣茶社","可选喝茶休息；座位、茶水消费及辅助犬接待以提前沟通和现场安排为准。"],"kuanzhai":["宽窄巷子","成都市青羊区宽窄巷子","只逛开放街区，不进入收费小院。人民公园至此可步行或乘地铁短接；人多时缩短停留。"],"maojiao":["冒椒火辣（奎星楼创始店）","成都市青羊区奎星楼街33号 冒椒火辣","固定晚餐，约140元／两人。按你提供的16:00放号计划核对线上取号；留意地面湿滑并提前确认辅助犬同行。"],"tower":["339电视塔户外区域","成都339 天府熊猫塔","可选户外夜景，不安排登塔；从奎星楼乘地铁前往并留足返程时间，疲惫时取消。"],"bobo":["乐山鲜知味钵钵鸡（草堂北路店）","成都市青羊区草堂北路16号附18号 乐山鲜知味钵钵鸡","午餐约70元／两人；钵钵鸡搭配鸡汤饭，优先沟通外摆或靠边大厅，提前确认辅助犬接待。"],"ifs":["IFS国金中心／春熙路户外区域","成都IFS国际金融中心","以春熙路公共步行街区域为主；商场、屋顶和内部店铺不默认纳入，进入前核实辅助犬接待规则。"],"east":["东郊记忆","成都市成华区东郊记忆","以园区户外步道为主，展馆、活动和室内店铺另行确认；周六活动人流临近出发再核对。"],"maoji":["毛记和意冒菜（解放西街店）","成都市金牛区解放西街9号附2号 毛记和意冒菜","晚餐约100元／两人；招牌冒牛肉。提前确认当晚营业、最后接单及辅助犬同行。"],"lan":["兰桂坊／九眼桥河畔","成都兰桂坊 九眼桥","夜间二选一，仅河边散步，不安排酒吧消费；乘地铁往返并留意末班车，人流或噪声较大时取消。"],"yulin":["玉林路小酒馆街区","成都玉林路小酒馆","夜间二选一，仅老街慢行，不默认进入小酒馆；乘地铁往返，次日出行或末班时间紧时优先休息。"]};
+const routeSets=[['ctu','bbq'],['police','vet','taode','park','tea','kuanzhai','maojiao','tower'],['bobo','ifs','east','maoji','lan','yulin']];
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function mapUrl(id){return 'https://uri.amap.com/search?keyword='+encodeURIComponent(places[id][1])+'&city=成都&src=bstozc&callnative=1';}
+function placeCard(id){const p=places[id];return '<details class="place-info"><summary>地点介绍 · '+esc(p[0])+'</summary><p>'+esc(p[2])+'</p><p>'+esc(p[1])+'</p>'+(p[3]?'<p><a href="'+esc(p[3])+'" target="_blank" rel="noopener">查看门店信息来源</a></p>':'')+'<a class="nav-link" href="'+mapUrl(id)+'" target="_blank" rel="noopener">📍 高德地图 · 查找并导航</a></details>';}
+function routeSvg(ids,label){const rows=Math.ceil(ids.length/3),height=rows*112+34;return '<svg class="map-svg" viewBox="0 0 700 '+height+'" role="img" aria-label="'+esc(label)+'路线顺序示意图"><text x="20" y="23" class="minor">路线顺序示意 · 非比例地图 · 虚线／可选地点不代表必须前往</text>'+ids.map((id,i)=>{const row=Math.floor(i/3),col=row%2?2-i%3:i%3,x=115+235*col,y=70+112*row;let edge='';if(i){const pr=Math.floor((i-1)/3),pc=pr%2?2-(i-1)%3:(i-1)%3,px=115+235*pc,py=70+112*pr;edge='<path d="M'+px+' '+py+' L'+x+' '+y+'" class="route-line"/>'; }const label=places[id][0];return edge+'<a href="'+mapUrl(id)+'" target="_blank" aria-label="打开高德：'+esc(label)+'"><circle cx="'+x+'" cy="'+y+'" r="16" class="dot"/><text x="'+x+'" y="'+(y+5)+'" text-anchor="middle" style="font-size:13px">'+(i+1)+'</text><text x="'+x+'" y="'+(y+36)+'" text-anchor="middle" style="font-size:13px">'+esc(label.slice(0,14))+'</text>'+(label.length>14?'<text x="'+x+'" y="'+(y+53)+'" text-anchor="middle" class="minor">'+esc(label.slice(14))+'</text>':'')+'</a>';}).join('')+'</svg>';}
+function routeBlock(i){if(!routeSets[i])return '<p class="sub">路线待交通及景点确认后补充。</p>';const ids=routeSets[i];return '<details class="daily-map"><summary>展开当日路线与地点导航</summary>'+routeSvg(ids,days[i][0])+'<p class="sub">'+(i===1?'先在犀浦办事，再乘6号线至郫筒；办完乘地铁进城。339为饭后可选加程。':i===2?'主线乘地铁至毛记和意；兰桂坊与玉林为二选一分支，不能按图序连续都去。':'航班落地接近地铁末班，夜宵为候选；建议改到其他夜晚。')+'</p><div class="nav-list">'+ids.map(id=>'<a class="nav-link" href="'+mapUrl(id)+'" target="_blank" rel="noopener">'+esc(places[id][0])+'</a>').join('')+'</div><p class="sub">市内交通固定乘地铁，近距离步行衔接，不按未定酒店地址规划；线路、出口和末班车以高德地图与运营方当日信息为准。</p></details>';}
+const tabs=document.getElementById('dayTabs'),panels=document.getElementById('dayPanels');
+days.forEach((d,i)=>{const label=i===0?'抵达日':'Day'+i;const b=document.createElement('button');b.textContent=label+' '+d[0];b.className=i===0?'active':'';b.setAttribute('aria-pressed',String(i===0));b.onclick=()=>selectDay(i);tabs.appendChild(b);const p=document.createElement('div');p.className='card day-panel'+(i===0?' active':'');p.innerHTML='<div class="day-title"><strong>'+label+' · '+esc(d[2])+'</strong><span class="sub">'+esc(d[0]+' '+d[1])+'</span></div><p class="sub" style="font-size:13px">'+esc(d[3])+'</p>'+routeBlock(i)+'<div class="timeline">'+d[4].map(e=>'<div class="timecell">'+esc(e[0])+'<br><small>UTC+8</small></div><div class="event"><b>'+esc(e[1])+'</b><p>'+esc(e[2])+'</p><span class="tag">'+esc(e[3])+'</span>'+(e[5]?'<div class="travel-pill">'+esc(e[5])+'</div>':'')+(e[4]?placeCard(e[4]):'')+(e[6]?'<p><a href="'+esc(e[6])+'" target="_blank" rel="noopener">核对来源</a></p>':'')+'</div>').join('')+'</div>';panels.appendChild(p);});
+function selectDay(i){[...tabs.children].forEach((b,j)=>{b.classList.toggle('active',i===j);b.setAttribute('aria-pressed',String(i===j));});[...panels.children].forEach((p,j)=>p.classList.toggle('active',i===j));showRoute(i);}
+function showRoute(i){const out=document.getElementById('routeOverview');if(i==='overview'){out.innerHTML='<p class="sub">11月26日双流汇合 → 27日郫都办事及成都城西 → 28日市中心、东郊与城北 → 29日航班待补 → 大理后续待安排。全程田子辰、杨秉尚与辅助犬支付宝同行。</p>'+routeSvg(['ctu','police','vet','taode','park','maojiao'],'成都重点地点');return;}if(i==='all'){out.innerHTML=routeSets.map((ids,j)=>'<h3>'+days[j][0]+'</h3>'+routeSvg(ids,days[j][0])).join('');return;}out.innerHTML=routeSets[i]?routeSvg(routeSets[i],days[i][0])+'<p class="sub">'+(i===2?'最后两站为二选一夜间备选；不连续串行。':i===1?'339为可选地铁加程，注意返程末班车。':'计划落地接近地铁末班，夜宵建议改到其他夜晚。')+'</p>':'<p class="sub">当天路线待交通与景点确认后补充。</p>';}
+showRoute('overview');
 const departures=[['countdown',new Date('2026-11-26T20:25:00+08:00')],['countdownYang',new Date('2026-11-26T20:30:00+08:00')]];
 function tick(){
  const now=new Date();
