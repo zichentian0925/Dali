@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f1ea">
+<title>成都 · 大理｜八日旅行手册</title>
+<style>
+:root{color-scheme:light;--bg:#f4f1ea;--paper:#fffdf8;--ink:#252820;--muted:#77796f;--line:#e7e1d5;--green:#526b58;--green2:#dfe8dd;--orange:#c47b4b;--orange2:#f4e5d8;--blue:#55758b;--blue2:#e1ebf0;--shadow:0 12px 34px rgba(50,45,35,.07)}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#171b19;--paper:#222925;--ink:#f0eee6;--muted:#a8afa7;--line:#39423c;--green:#a9c4ac;--green2:#2e4035;--orange:#e1a477;--orange2:#49352a;--blue:#9ab9ca;--blue2:#293d48;--shadow:0 12px 34px rgba(0,0,0,.22)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.55}
+button,a{font:inherit}a{color:inherit}.wrap{width:min(100% - 28px,980px);margin:auto}.hero{padding:34px 0 22px;background:radial-gradient(circle at 90% 5%,#e9d7c5 0,transparent 32%),radial-gradient(circle at 4% 20%,#dbe5dc 0,transparent 34%)}
+:root[data-theme="dark"] .hero{background:radial-gradient(circle at 90% 5%,#47392e 0,transparent 32%),radial-gradient(circle at 4% 20%,#2d4035 0,transparent 34%)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--muted);font-weight:700}.theme{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:8px 12px;font-size:12px}
+h1{font-family:Georgia,"Songti SC",serif;font-weight:500;font-size:clamp(36px,8vw,64px);line-height:1.05;letter-spacing:-.04em;margin:24px 0 12px}h1 span{color:var(--green)}.sub{color:var(--muted);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.chip{font-size:12px;padding:6px 10px;border-radius:99px;background:var(--paper);border:1px solid var(--line)}
+main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head h2{font-size:19px;margin:0;font-weight:650}.kicker{font-size:10px;letter-spacing:.14em;color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.focus{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;align-items:center}.focus small{color:var(--muted)}.next-title{font-size:18px;font-weight:700;margin:5px 0}.count{display:flex;gap:7px;margin-top:10px}.unit{background:var(--green2);border-radius:12px;padding:8px 10px;min-width:54px;text-align:center}.unit b{display:block;font-size:22px;font-variant-numeric:tabular-nums}.unit span{font-size:10px;color:var(--muted)}
+.clock{text-align:right;color:var(--muted);font-size:12px}.clock strong{display:block;color:var(--ink);font-size:23px;font-variant-numeric:tabular-nums}
+.flight-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.flight .who{font-size:12px;color:var(--muted)}.flight h3{margin:5px 0 12px;font-size:16px}.route{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}.time{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums}.airport{font-size:12px;color:var(--muted)}.plane{text-align:center;color:var(--green);font-size:19px}.flight-foot{border-top:1px solid var(--line);margin-top:13px;padding-top:10px;font-size:12px;color:var(--muted)}
+.status{display:inline-block;border-radius:99px;padding:3px 8px;background:var(--orange2);color:var(--orange);font-size:11px;margin-left:5px}
+.notice{border-left:3px solid var(--orange);padding:10px 12px;background:var(--orange2);border-radius:0 12px 12px 0;font-size:13px}
+.map-card{overflow:hidden}.map-tools{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.map-tools button,.day-tabs button{border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 11px;border-radius:99px;font-size:12px}.map-tools button.active,.day-tabs button.active{background:var(--green);color:white;border-color:var(--green)}
+.map-svg{width:100%;height:auto;display:block;background:linear-gradient(135deg,var(--green2),var(--blue2));border-radius:14px}.map-svg text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:var(--ink)}.map-svg .city{font-size:20px;font-weight:700}.map-svg .minor{font-size:11px;fill:var(--muted)}.map-svg .route-line{fill:none;stroke:var(--orange);stroke-width:4;stroke-linecap:round;stroke-dasharray:7 7}.map-svg .dot{fill:var(--paper);stroke:var(--green);stroke-width:3}
+.day-tabs{display:flex;gap:7px;overflow:auto;padding:2px 0 10px}.day-tabs button{white-space:nowrap}.day-panel{display:none}.day-panel.active{display:block}.day-title{display:flex;justify-content:space-between;align-items:center;margin:8px 0 12px}.day-title strong{font-size:17px}.timeline{display:grid;grid-template-columns:72px 1fr;gap:0 12px}.timecell{font-size:12px;color:var(--green);font-weight:700;padding:13px 0;border-right:1px solid var(--line);position:relative}.timecell:after{content:"";position:absolute;right:-4px;top:18px;width:7px;height:7px;border-radius:50%;background:var(--green)}.event{padding:10px 0 15px 0;border-bottom:1px solid var(--line)}.event b{display:block;font-size:14px}.event p{margin:4px 0;color:var(--muted);font-size:12px}.tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:99px;background:var(--blue2);color:var(--blue);margin:3px 4px 0 0}
+.todo{display:grid;grid-template-columns:1fr 1fr;gap:8px}.todo div{padding:11px 12px;border:1px solid var(--line);border-radius:12px;font-size:13px}.todo small{display:block;color:var(--muted);margin-top:3px}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.info-grid .card{box-shadow:none}.info-grid h3{font-size:14px;margin:0 0 7px}.info-grid p{font-size:12px;color:var(--muted);margin:0}
+.footer{padding:20px 0 35px;color:var(--muted);font-size:11px;text-align:center}
+@media(max-width:620px){.wrap{width:min(100% - 22px,980px)}.focus{grid-template-columns:1fr}.clock{text-align:left}.flight-grid{grid-template-columns:1fr}.todo,.info-grid{grid-template-columns:1fr}.hero{padding-top:25px}.time{font-size:23px}}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--bg:#171b19;--paper:#222925;--ink:#f0eee6;--muted:#a8afa7;--line:#39423c;--green:#a9c4ac;--green2:#2e4035;--orange:#e1a477;--orange2:#49352a;--blue:#9ab9ca;--blue2:#293d48;--shadow:0 12px 34px rgba(0,0,0,.22)}:root:not([data-theme]) .hero{background:radial-gradient(circle at 90% 5%,#47392e 0,transparent 32%),radial-gradient(circle at 4% 20%,#2d4035 0,transparent 34%)}}
+.map-tools button.active,.day-tabs button.active{color:var(--paper)}
+</style><script>try{const theme=localStorage.getItem('travel-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(_){}</script>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <div class="top"><div class="eyebrow">TWO PEOPLE · EIGHT DAYS · 2026</div><button class="theme" id="themeBtn" type="button">切换深浅色</button></div>
+  <h1>成都 <span>·</span> 大理<br><span>慢慢走，</span>好好玩。</h1>
+  <div class="sub">11月26日 — 12月3日　｜　两个人的旅行手册</div>
+  <div class="meta"><span class="chip">深圳出发：你</span><span class="chip">广州出发：杨秉尚</span><span class="chip">中国标准时间 UTC+8</span></div>
+</div></header>
+<main class="wrap">
+  <section class="section">
+    <div class="section-head"><h2>此刻关注</h2><span class="kicker">NEXT UP</span></div>
+    <div class="card focus">
+      <div><small>距离你的去程航班起飞</small><div class="next-title">11月26日 · 深圳 → 成都</div><div class="count" id="countdown"><div class="unit"><b>--</b><span>天</span></div><div class="unit"><b>--</b><span>时</span></div><div class="unit"><b>--</b><span>分</span></div><div class="unit"><b>--</b><span>秒</span></div></div></div>
+      <div class="clock"><span>中国标准时间 · UTC+8</span><strong id="cnclock">--:--:--</strong><span id="today">----</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>去程航班</h2><span class="kicker">NOV 26 · OUTBOUND</span></div>
+    <div class="notice">目前截图是航班查询／选择页面，并非电子客票或出票凭证。以下按已选方案登记，出票状态、机场航站楼及最终时刻请以航空公司订单为准。</div>
+    <div class="flight-grid" style="margin-top:12px">
+      <article class="card flight"><div class="who">你 · 深圳出发</div><h3>四川航空 3U8708 <span class="status">待出票确认</span></h3><div class="route"><div><div class="time">20:25</div><div class="airport">深圳宝安 T3</div></div><div class="plane">✈</div><div style="text-align:right"><div class="time">22:55</div><div class="airport">成都双流 T1</div></div></div><div class="flight-foot">11月26日（周四）｜A321（截图信息）｜约2小时30分钟</div></article>
+      <article class="card flight"><div class="who">杨秉尚 · 广州出发</div><h3>中国南方航空 CZ3413 <span class="status">已勾选／待出票确认</span></h3><div class="route"><div><div class="time">20:30</div><div class="airport">广州（机场待核实）</div></div><div class="plane">✈</div><div style="text-align:right"><div class="time">23:00</div><div class="airport">成都双流</div></div></div><div class="flight-foot">11月26日（周四）｜截图显示广州 20:30 — 成都双流 23:00</div></article>
+    </div>
+    <p class="sub" style="font-size:12px;margin:10px 2px 0">两班计划抵达时间相差约5分钟；两人均到成都双流机场。请留意实际落地、滑行及行李提取时间，不建议把5分钟理解为能够同步出航站楼。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>旅行地图</h2><span class="kicker">SCHEMATIC · NOT TO SCALE</span></div>
+    <div class="card map-card">
+      <svg class="map-svg" viewBox="0 0 700 330" role="img" aria-label="成都与大理旅行示意图">
+        <path d="M30 250 C110 180 140 290 240 220 S390 160 470 210 S580 290 670 170" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="28" stroke-linecap="round"/>
+        <path d="M45 70 C160 20 230 90 310 55 S490 30 650 90" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
+        <path d="M80 260 Q220 110 355 145 T600 240" class="route-line"/>
+        <circle cx="80" cy="260" r="8" class="dot"/><circle cx="355" cy="145" r="8" class="dot"/><circle cx="600" cy="240" r="8" class="dot"/>
+        <text x="55" y="290" class="city">成都</text><text x="55" y="307" class="minor">11.26 起 · 双流机场</text>
+        <text x="325" y="115" class="city">途中</text><text x="325" y="132" class="minor">城际交通待确认</text>
+        <text x="560" y="275" class="city">大理</text><text x="560" y="292" class="minor">住宿与抵达待确认</text>
+        <text x="350" y="36" text-anchor="middle" class="minor">成都 — 大理具体交通路线尚未提供</text>
+      </svg>
+      <div class="map-tools"><button class="active" type="button">总览示意</button><button type="button" onclick="alert('具体景点地址尚未提供，补齐后可在这里生成逐日导航。')">逐日路线待补充</button></div>
+      <div class="sub" style="font-size:12px">此图仅表示旅行城市顺序，不代表真实道路、里程或交通方式。景点、酒店地址确认后再补充准确地图和高德导航入口。</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>八日行程</h2><span class="kicker">DAY BY DAY</span></div>
+    <div class="day-tabs" id="dayTabs"></div>
+    <div id="dayPanels"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>出行待办</h2><span class="kicker">PLAIN-TEXT CHECKLIST</span></div>
+    <div class="todo">
+      <div>确认两张去程机票是否出票<small>补充电子客票号／出票状态（公开网页不展示敏感编号）</small></div>
+      <div>补充12月3日返程航班<small>核对最终抵达广州的时间与机场</small></div>
+      <div>确认成都、大理住宿<small>酒店名称、入住退房日期、地址；订单号不公开展示</small></div>
+      <div>确认成都 → 大理交通<small>航班／火车／其他交通方式及班次</small></div>
+      <div>整理景点门票与预约<small>核对预约规则、开放时间和闭馆日</small></div>
+      <div>补充每日游玩安排<small>按已出票交通和酒店位置反推路线</small></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>住宿与交通档案</h2><span class="kicker">BOOKINGS</span></div>
+    <div class="info-grid">
+      <div class="card"><h3>成都住宿</h3><p>酒店名称、地址、入住日期：待补充。</p></div>
+      <div class="card"><h3>大理住宿</h3><p>酒店名称、地址、入住日期：待补充。</p></div>
+      <div class="card"><h3>城际交通</h3><p>成都前往大理的交通方式、班次与时间：待补充。</p></div>
+      <div class="card"><h3>返程交通</h3><p>12月3日返程航班及抵达广州时间：待补充。</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><h2>行前提醒</h2><span class="kicker">TRAVEL NOTES</span></div>
+    <div class="card">
+      <ul style="padding-left:19px;margin:0;font-size:13px">
+        <li>成都与大理的天气、温差和降雨情况请临近出发再核对；大理早晚温差通常需要额外准备保暖衣物。</li>
+        <li>成都双流机场与成都天府机场是不同机场，接机、住宿和后续交通务必以最终客票为准。</li>
+        <li>两班航班虽显示相近抵达时间，仍需预留下机、滑行、行李提取和航站楼内步行时间。</li>
+        <li>景点开放时间、预约规则及交通班次需以官方最新信息为准；本手册暂不虚构未提供的预约或订单信息。</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap">成都 · 大理　/　两个人的八日旅行<br>本页面为离线旅行手册；待补资料确认后可继续完善路线与导航。</div></footer>
+<script>
+const days=[
+["11月26日","周四","深圳／广州 → 成都","两人分别出发，晚间抵达成都双流机场。落地后集合与前往酒店方式待确认。",[
+["20:25","你｜3U8708 起飞","深圳宝安 T3 → 成都双流 T1；截图方案，出票状态待核实。","航班"],
+["20:30","杨秉尚｜CZ3413 起飞","广州 → 成都双流；截图勾选方案，出票状态待核实。","航班"],
+["22:55 / 23:00","预计抵达成都双流","两班计划到达时间相差约5分钟；实际时间以航班动态为准。","注意"]
+]],
+["11月27日","周五","成都","当天游览安排待补充；需结合酒店位置、预约和开放时间安排。",[["待定","成都行程","景点、餐饮及交通待确认。","待补充"]]],
+["11月28日","周六","成都","周末客流可能较大，热门景点建议提前核实预约要求。",[["待定","成都行程","景点、餐饮及交通待确认。","待补充"]]],
+["11月29日","周日","成都 → 大理（暂定）","城市切换日期尚未确认，需以城际交通订单为准。",[["待定","城际交通","成都至大理交通方式、班次和抵达时间待补充。","待补充"]]],
+["11月30日","周一","大理","当天游览安排待补充。",[["待定","大理行程","景点、餐饮及交通待确认。","待补充"]]],
+["12月1日","周二","大理","当天游览安排待补充。",[["待定","大理行程","景点、餐饮及交通待确认。","待补充"]]],
+["12月2日","周三","大理","返程前一天；建议根据12月3日返程时间确定活动范围。",[["待定","大理行程","景点、餐饮及交通待确认。","待补充"]]],
+["12月3日","周四","大理 → 广州","返程航班未提供；需按实际起飞时间倒推离店和前往机场／车站时间。",[["待定","返程","返程班次、起飞时间和抵达广州时间待补充。","待补充"]]]
+];
+const tabs=document.getElementById('dayTabs'), panels=document.getElementById('dayPanels');
+days.forEach((d,i)=>{
+ const b=document.createElement('button');b.textContent='D'+(i+1)+' '+d[0];b.className=i===0?'active':'';b.onclick=()=>selectDay(i);tabs.appendChild(b);
+ const p=document.createElement('div');p.className='card day-panel'+(i===0?' active':'');
+ p.innerHTML=`<div class="day-title"><strong>D${i+1} · ${d[2]}</strong><span class="sub">${d[0]} ${d[1]}</span></div><p class="sub" style="font-size:13px">${d[3]}</p><div class="timeline">${d[4].map(e=>`<div class="timecell">${e[0]}<br><small>UTC+8</small></div><div class="event"><b>${e[1]}</b><p>${e[2]}</p><span class="tag">${e[3]}</span></div>`).join('')}</div>`;
+ panels.appendChild(p);
+});
+function selectDay(i){[...tabs.children].forEach((b,j)=>b.classList.toggle('active',i===j));[...panels.children].forEach((p,j)=>p.classList.toggle('active',i===j));}
+const target=new Date('2026-11-26T20:25:00+08:00');
+function tick(){
+ const now=new Date(), diff=Math.max(0,target-now);
+ const vals=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];
+ document.getElementById('countdown').innerHTML=vals.map((v,i)=>`<div class="unit"><b>${String(v).padStart(2,'0')}</b><span>${['天','时','分','秒'][i]}</span></div>`).join('');
+ const cn=new Date(now.getTime()+8*3600000);document.getElementById('cnclock').textContent=cn.toISOString().slice(11,19);document.getElementById('today').textContent=cn.toISOString().slice(0,10)+' · 北京时间';
+}
+tick();setInterval(tick,1000);
+const root=document.documentElement,btn=document.getElementById('themeBtn');
+const systemTheme=window.matchMedia('(prefers-color-scheme: dark)');
+function isDark(){return root.dataset.theme?root.dataset.theme==='dark':systemTheme.matches;}
+function updateTheme(){const dark=isDark();btn.textContent=dark?'切换浅色':'切换深色';document.querySelector('meta[name="theme-color"]').content=dark?'#171b19':'#f4f1ea';}
+btn.onclick=()=>{const next=isDark()?'light':'dark';root.dataset.theme=next;try{localStorage.setItem('travel-theme',next);}catch(_){}updateTheme();};
+systemTheme.addEventListener('change',updateTheme);
+updateTheme();
+</script>
+</body></html>
