@@ -48,7 +48,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 .flight-slider::-webkit-scrollbar{height:5px}.flight-slider::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
 .flight-controls{display:flex;gap:6px}.flight-controls button{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);font-size:18px;line-height:1}
 .flight-hint{font-size:11px;color:var(--muted);margin:0 2px 8px}
-@media(min-width:760px){.flight-slider{grid-auto-columns:calc((100% - 24px)/3)}}
+@media(min-width:760px){.flight-slider{grid-auto-columns:calc((100% - 12px)/2)}}
 </style><script>try{const theme=localStorage.getItem('travel-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(_){}</script>
 </head>
 <body>
@@ -441,8 +441,9 @@ function selectDay(i){[...tabs.children].forEach((b,j)=>{b.classList.toggle('act
 function showRoute(i){const out=document.getElementById('routeOverview');if(i==='overview'){out.innerHTML='<p class="sub">11月27日和28日从已入住酒店出发并返回；29日从酒店乘地铁前往天府机场T2。线路、出口和运营时间以当日信息为准。</p>'+[1,2,3].map(j=>'<details class="route-overview-day"><summary>'+days[j][0]+' · '+(j===3?'酒店出发／前往机场':'入住酒店出发／返回')+'</summary>'+routeSvg(routeSets[j],days[j][0])+branchRoutes(j)+'</details>').join('');return;}if(i==='all'){out.innerHTML=routeSets.map((ids,j)=>'<details class="route-overview-day"><summary>'+days[j][0]+'</summary>'+routeSvg(ids,days[j][0])+branchRoutes(j)+'</details>').join('');return;}out.innerHTML=routeSets[i]?routeSvg(routeSets[i],days[i][0])+branchRoutes(i)+'<p class="sub">'+(i===2?'主线和晚间备选均回入住酒店；兰桂坊与玉林路只选一处。':i===1?'主线从入住酒店出发并回到酒店；339为饭后可选支线。':i===3?'从酒店乘地铁前往成都天府机场T2，按航班和当日运营信息倒推出发时间；酒店需提前退房。':'计划落地接近地铁末班，夜宵建议改到其他夜晚。')+'</p>':'<p class="sub">当天路线待交通与景点确认后补充。</p>'; }
 showRoute('overview');
 const flightTrack=document.getElementById('flightTrack');
-document.getElementById('flightPrev').onclick=()=>flightTrack.scrollBy({left:-flightTrack.clientWidth*.9,behavior:'smooth'});
-document.getElementById('flightNext').onclick=()=>flightTrack.scrollBy({left:flightTrack.clientWidth*.9,behavior:'smooth'});
+const flightStep=()=>flightTrack.querySelector('.flight').getBoundingClientRect().width+12;
+document.getElementById('flightPrev').onclick=()=>flightTrack.scrollBy({left:-flightStep(),behavior:'smooth'});
+document.getElementById('flightNext').onclick=()=>flightTrack.scrollBy({left:flightStep(),behavior:'smooth'});
 const departures=[['countdown',new Date('2026-11-26T20:30:00+08:00')],['countdownYang',new Date('2026-11-26T20:30:00+08:00')]];
 function tick(){
  const now=new Date();
