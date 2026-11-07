@@ -73,7 +73,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 <main class="wrap">
 <section class="card budget-card section" aria-label="旅行预算进度">
   <svg class="budget-ring" viewBox="0 0 120 120" role="img" aria-label="已预订预算占比"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-progress" id="budgetRing" cx="60" cy="60" r="52"/><text class="ring-number" x="60" y="58" id="budgetPercent">0%</text><text class="ring-copy" x="60" y="76">已预订</text></svg>
-  <div class="budget-main"><div class="budget-kicker">两个人的旅行小金库 · 不含飞机</div><div class="budget-numbers"><div><div class="budget-total">¥8,000</div><div class="budget-left">总预算</div></div><div style="text-align:right"><div class="budget-total" id="budgetRemaining">¥7,345.49</div><div class="budget-left">还可以放心花</div></div></div><div class="budget-bar" role="progressbar" aria-label="已预订预算比例" aria-valuemin="0" aria-valuemax="8000" aria-valuenow="654.51"><span id="budgetBar"></span></div><div class="budget-detail"><span>已预订 ¥<b id="budgetSpent">654.51</b></span><span>成都酒店 · 3晚</span></div><p class="budget-note">目前只计入已确认的成都酒店订单 ¥654.51；餐饮标价是估算，未当作已花费用。机票不计入。</p></div>
+  <div class="budget-main"><div class="budget-kicker">两个人的旅行小金库 · 不含飞机</div><div class="budget-numbers"><div><div class="budget-total">¥8,000</div><div class="budget-left">总预算</div></div><div style="text-align:right"><div class="budget-total" id="budgetRemaining">¥5,771.49</div><div class="budget-left">还可以放心花</div></div></div><div class="budget-bar" role="progressbar" aria-label="已预订预算比例" aria-valuemin="0" aria-valuemax="8000" aria-valuenow="2228.51"><span id="budgetBar"></span></div><div class="budget-detail"><span>已预订 ¥<b id="budgetSpent">2,228.51</b></span><span>成都住宿 + 大理住宿 + 租车</span></div><p class="budget-note">已预订非机票支出：成都住宿 ¥654.51 + 大理住宿 ¥1,076 + 租车 ¥498，共 ¥2,228.51。餐饮估算未计入；机票不计入。</p></div>
 </section>
 <div class="card section"><strong>🐶 同行伙伴 · 支付宝</strong><p class="sub" style="margin-bottom:0">支付宝是一只辅助犬，已确认与田子辰搭乘11月26日 CA4304 从广州前往成都；服务犬同行已确认。抵达后与杨秉尚汇合，两人一犬共同参与全部行程。</p></div>
 <section class="section"><div class="section-head"><h2>11月24日 · 行前准备</h2><span class="kicker">2026年 · 周二 · UTC+8</span></div><div class="card"><div class="timeline"><div class="timecell">10:00<br><small>UTC+8</small></div><div class="event"><b>田子辰带支付宝办理动物检疫证明</b><p>前往南山动物检疫申报点，开具动物检疫证明。</p><p><a href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E5%AD%A6%E5%BA%9C%E8%B7%AF265%E5%8F%B7%E5%86%9C%E6%A3%80%E5%A4%A7%E6%A5%BC&city=深圳&src=bstozc&callnative=1" target="_blank" rel="noopener">📍 南山区学府路265号农检大楼一楼 · 打开高德地图</a></p><span class="tag">辅助犬支付宝</span><span class="tag">行前办理</span></div><div class="timecell">已确认<br><small>服务犬同行</small></div><div class="event"><b>CA4304 辅助犬同行 · 已确认</b><p>田子辰与支付宝搭乘11月26日中国国际航空 CA4304，服务犬同行已确认。</p><span class="tag">已确认</span><span class="tag">已完成</span></div></div></div></section>
@@ -100,7 +100,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 
   <section class="section">
     <div class="section-head"><h2>旅行地图</h2><span class="kicker">SCHEMATIC · NOT TO SCALE</span></div>
-    <div class="card map-card"><div class="map-tools"><button type="button" onclick="showRoute('overview')">城市总览</button><button type="button" onclick="showRoute(0)">11.26夜宵</button><button type="button" onclick="showRoute(1)">11.27路线</button><button type="button" onclick="showRoute(2)">11.28路线</button><button type="button" onclick="showRoute(3)">11.29酒店→机场</button><button type="button" onclick="showRoute('all')">显示全部地点</button></div><div id="routeOverview"></div><p class="sub" style="font-size:12px">点图中地点打开高德，11月29日可直接查看酒店至天府机场T2的地铁规划。图示表示站点顺序，不表示真实距离或地铁线路；班次、换乘与出口以出行当天高德及运营方信息为准。</p></div>
+    <div class="card map-card"><div class="map-tools"><button type="button" onclick="showRoute('overview')">城市总览</button><button type="button" onclick="showRoute(0)">11.26夜宵</button><button type="button" onclick="showRoute(1)">11.27路线</button><button type="button" onclick="showRoute(2)">11.28路线</button><button type="button" onclick="showRoute(3)">11.29酒店→机场</button><button type="button" onclick="showRoute('all')">显示全部地点</button></div><div id="routeOverview"></div><p class="sub" style="font-size:12px">点图中地点打开高德。11月29日可查看成都酒店至天府机场T2的地铁规划；大理机场取车点和酒店地址可在当天行程卡片中点击导航。图示表示站点顺序，不表示真实距离或地铁线路；班次、换乘与出口以出行当天信息为准。</p></div>
   </section>
 
   <section class="section">
@@ -113,7 +113,9 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
     <div class="section-head"><h2>出行待办</h2><span class="kicker">PLAIN-TEXT CHECKLIST</span></div>
     <div class="todo">
 <div>11月24日10:00 · 办理支付宝动物检疫证明<small>田子辰携支付宝前往南山区学府路265号农检大楼一楼 · UTC+8</small></div>
-      <div>补充12月3日返程航班<small>核对最终抵达广州的时间与机场</small></div>
+      <div>补充12月3日返程航班<small>核对抵达广州的时间与机场，并衔接大理机场09:15还车安排</small></div>
+      <div>确认大理酒店接待支付宝服务犬<small>订单截图确认酒店已预订，但未显示服务犬入住确认；出发前向酒店核实</small></div>
+      <div>确认大理机场取车衔接<small>租车预订13:30取车，CZ2024计划13:00落地；提前联系门店确认缓冲或顺延办法</small></div>
       <div>11月27日 · 办理并确认 CZ2024 辅助犬同行<small>为11月29日成都天府T2 → 大理凤仪机场的行程，联系南航确认并办理支付宝的服务犬同行手续；办理完成后再更新状态。</small></div>
       <div>整理景点门票与预约<small>核对预约规则、开放时间和闭馆日</small></div>
       <div>补充每日游玩安排<small>按已确认的出发地点和地铁运营信息规划路线</small></div>
@@ -124,7 +126,8 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
     <div class="section-head"><h2>住宿与交通档案</h2><span class="kicker">BOOKINGS</span></div>
     <div class="info-grid">
       <div class="card"><h3>成都住宿 · 已确认</h3><p>汉庭优佳成都宽窄巷子酒店<br>地址：西安北路90号附1号<br>入住：11月26日14:00后；酒店允许11月29日16:00前退房<br>支付宝服务犬入住已确认。11月29日06:30起床喂狗，07:00遛狗至07:30，再退房乘地铁出发。</p><p><a href="https://uri.amap.com/search?keyword=%E6%B1%89%E5%BA%AD%E4%BC%98%E4%BD%B3%E6%88%90%E9%83%BD%E5%AE%BD%E7%AA%84%E5%B7%B7%E5%AD%90%E9%85%92%E5%BA%97%20%E8%A5%BF%E5%AE%89%E5%8C%97%E8%B7%AF90%E5%8F%B7%E9%99%841%E5%8F%B7&city=%E6%88%90%E9%83%BD&src=bstozc&callnative=1" target="_blank" rel="noopener">📍 打开高德地图导航</a></p></div>
-      <div class="card"><h3>大理住宿</h3><p>酒店名称、地址、入住日期：待补充。</p></div>
+      <div class="card"><h3>大理住宿 · 已预订</h3><p>汉庭大理古城南门酒店<br>地址：大理古城玉秀路74号<br>入住：11月29日14:00后；退房：12月3日14:00前<br>1间大床房 · 预订金额 ¥1,076。截图未显示支付宝服务犬入住确认，需向酒店核实。</p><p><a href="https://uri.amap.com/search?keyword=%E6%B1%89%E5%BA%AD%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E5%8D%97%E9%97%A8%E9%85%92%E5%BA%97%20%E5%A4%A7%E7%90%86%E5%8F%A4%E5%9F%8E%E7%8E%89%E7%A7%80%E8%B7%AF74%E5%8F%B7&city=%E5%A4%A7%E7%90%86&src=bstozc&callnative=1" target="_blank" rel="noopener">📍 打开高德地图导航</a></p></div>
+      <div class="card"><h3>大理租车 · 已预订</h3><p>大众探岳（自动／2.0T／SUV／5座，以门店交付为准）<br>取还车：大理机场店（站内取还）<br>取车：11月29日13:30；还车：12月3日09:15<br>租车费用 ¥498。取车点：国内到达出口右转约150米，机场停车场C区3排附近。请确认13:30取车与航班13:00落地的衔接。</p><p><a href="https://uri.amap.com/search?keyword=%E5%A4%A7%E7%90%86%E6%9C%BA%E5%9C%BA%E5%BA%97%20%E7%A7%9F%E8%BD%A6&city=%E5%A4%A7%E7%90%86&src=bstozc&callnative=1" target="_blank" rel="noopener">📍 高德地图 · 大理机场租车点</a></p></div>
       <div class="card"><h3>城际航班 · 已确认同班</h3><p>11月29日，田子辰与杨秉尚同乘南方航空 CZ2024：成都天府机场T2 11:40 → 大理凤仪机场 13:00，计划1小时20分。共享航班代码 OQ2024，由重庆航空实际承运。支付宝辅助犬同行手续待11月27日办理确认；执飞机型及当天动态以航司通知为准。</p></div>
       <div class="card"><h3>返程交通</h3><p>12月3日返程航班及抵达广州时间：待补充。</p></div>
     </div>
@@ -142,7 +145,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
     </div>
   </section>
 </main>
-<footer class="footer"><div class="wrap">田子辰、杨秉尚与支付宝的川滇约会记。<br>地点可点击打开高德地图；市内固定乘地铁，具体换乘及末班车以出行当日信息为准。</div></footer>
+<footer class="footer"><div class="wrap">田子辰、杨秉尚与支付宝的川滇约会记。<br>成都城区按地铁出行；大理已预订机场取还车。地点可点击打开高德地图，具体线路和道路以出行当日信息为准。</div></footer>
 <script>
 const days=[
  [
@@ -354,14 +357,36 @@ const days=[
  [
   "11月29日",
   "周日",
-  "成都 → 大理 · 两人同班出发",
-  "田子辰与杨秉尚同乘南方航空 CZ2024（共享航班代码 OQ2024，重庆航空实际承运），11:40 从成都天府T2起飞，13:00 抵达大理凤仪机场，计划飞行1小时20分。支付宝辅助犬同行手续安排于11月27日确认办理。11月29日06:30起床喂狗，07:00遛狗至07:30，再从酒店出发乘地铁，目标09:30前到机场；酒店允许16:00前退房，但赶航班需提前离店。",
+  "成都 → 大理 · 两人同班出发，大理机场取车入住",
+  "田子辰与杨秉尚同乘南方航空 CZ2024（共享航班代码 OQ2024，重庆航空实际承运），11:40 从成都天府T2起飞，13:00 抵达大理凤仪机场，计划飞行1小时20分。支付宝辅助犬同行手续安排于11月27日确认办理。06:30起床喂狗，07:00遛狗至07:30，再从成都酒店出发乘地铁，目标09:30前到天府机场。大理已预订机场租车（13:30取车）和汉庭大理古城南门酒店（14:00后入住）；取车与计划落地时间仅间隔30分钟，需提前确认衔接。",
   [
    [
     "11:40",
     "田子辰与杨秉尚｜南方航空 CZ2024 成都 → 大理",
     "同乘一班 CZ2024：成都天府机场T2 11:40 起飞 → 大理凤仪机场 13:00 到达，计划1小时20分。共享航班代码 OQ2024，由重庆航空实际承运；截图显示空客 A319-100，实际执飞机型以当天为准。支付宝辅助犬同行手续安排于11月27日确认办理。11月29日06:30起床喂狗，07:00遛狗至07:30，之后退房并出发乘地铁；目标09:30前到达机场。酒店允许16:00前退房。",
     "已订 · 两人同班"
+   ],
+   [
+    "13:00",
+    "抵达大理凤仪机场｜CZ2024",
+    "计划13:00抵达。下机、领取行李并照顾支付宝后，再前往机场租车门店；请留意航班实际到达时间。",
+    "计划抵达",
+    "daliAirport"
+   ],
+   [
+    "13:30",
+    "大理机场取车｜大众探岳",
+    "已预订自动／2.0T／SUV／5座车型（以门店交付为准），租车费用 ¥498。大理机场店站内取还，国内到达出口右转约150米、停车场C区3排附近。CZ2024计划13:00落地，30分钟取车衔接较紧，建议提前联系门店确认缓冲或顺延。",
+    "已预订 · 12月3日09:15还车",
+    "daliRental",
+    "从机场门店驾车前往大理古城酒店。"
+   ],
+   [
+    "14:00后",
+    "入住｜汉庭大理古城南门酒店",
+    "已预订1间大床房，金额 ¥1,076；地址：大理古城玉秀路74号。11月29日14:00后入住，12月3日14:00前退房。订单截图未显示支付宝服务犬入住确认，请提前向酒店核实。",
+    "已预订 · 住至12月3日",
+    "daliHotel"
    ]
   ]
  ],
@@ -374,7 +399,7 @@ const days=[
    [
     "待定",
     "大理行程",
-    "景点、餐饮及交通待确认。",
+    "大理市内交通使用已预订租车；景点与餐饮待确认。",
     "待补充"
    ]
   ]
@@ -388,7 +413,7 @@ const days=[
    [
     "待定",
     "大理行程",
-    "景点、餐饮及交通待确认。",
+    "大理市内交通使用已预订租车；景点与餐饮待确认。",
     "待补充"
    ]
   ]
@@ -397,12 +422,12 @@ const days=[
   "12月2日",
   "周三",
   "大理",
-  "返程前一天；建议根据12月3日返程时间确定活动范围。",
+  "返程前一天；根据12月3日返程班次安排活动，并预备次日09:15机场还车。",
   [
    [
     "待定",
     "大理行程",
-    "景点、餐饮及交通待确认。",
+    "大理市内交通使用已预订租车；景点与餐饮待确认。",
     "待补充"
    ]
   ]
@@ -411,13 +436,14 @@ const days=[
   "12月3日",
   "周四",
   "大理 → 广州",
-  "返程航班未提供；需按实际起飞时间倒推离店和前往机场／车站时间。",
+  "大理机场租车已订09:15还车；酒店须14:00前退房。返程航班未提供，需补充班次并核对还车后到机场／车站的衔接。",
   [
    [
-    "待定",
-    "返程",
-    "返程班次、起飞时间和抵达广州时间待补充。",
-    "待补充"
+    "09:15",
+    "大理机场门店还车",
+    "按预订时间还车；酒店须在14:00前退房。返程航班时间尚未提供，请按实际班次确认退房、前往机场和还车安排是否匹配。",
+    "已预订",
+    "daliRental"
    ]
   ]
  ]
@@ -425,13 +451,14 @@ const days=[
 const places={"ctu":["成都双流国际机场 T1","成都市双流区成都双流国际机场T1","两班航班计划相差约5分钟；下机、滑行、取行李和集合均需时间。"],"bbq":["峨眉山原汁双双烧烤（金牛店）","成都市金沙北一路38号 峨眉山原汁双双烧烤金牛店","地址：成都市金沙北一路38号。公开门店页列营业时间17:30—次日01:00；出发前确认当晚最后接单时间及辅助犬接待。按地铁固定交通，航班落地时间与T1末班车很接近，建议改到其他夜晚。","https://hk.trip.com/restaurant/china/chengdu/detail/restaurant-15212626/"],"police":["校园路派出所（犀浦）","成都市郫都区犀浦街道校园路555号 校园路派出所","09:00固定办理居住证续签、犬证；先确认窗口、材料和犬证办理范围。校园路555号，按高德地铁导航并预留出站步行。"],"vet":["郫都区畜牧兽医服务中心","成都市郫都区郫筒街道新南街153号","郫筒新南街153号。郫筒站可乘地铁6号线到达附近，再步行；办理时间、材料、预约和证明有效期须提前向受理点核实。"],"taode":["陶德砂锅（蜀汉路店）","成都市金牛区蜀汉路494号 陶德砂锅蜀汉路店","午餐约120元／两人；地址按蜀汉路494号附3号，公开平台亦出现附2号，入口到店前核实。提前取号并确认持证导听辅助犬同行。"],"park":["人民公园","成都市青羊区人民公园","以户外慢行为主；给支付宝饮水休息。"],"tea":["鹤鸣茶社","成都市人民公园鹤鸣茶社","可选喝茶休息；座位和茶水消费以现场安排为准。"],"kuanzhai":["宽窄巷子","成都市青羊区宽窄巷子","只逛开放街区，不进入收费小院。人民公园至此可步行或乘地铁短接；人多时缩短停留。"],"maojiao":["冒椒火辣（奎星楼创始店）","成都市青羊区奎星楼街33号 冒椒火辣","固定晚餐，约140元／两人。按你提供的16:00放号计划核对线上取号；留意地面湿滑并提前确认辅助犬同行。"],"tower":["339电视塔户外区域","成都339 天府熊猫塔","可选户外夜景，不安排登塔；从奎星楼乘地铁前往并留足返程时间，疲惫时取消。"],"bobo":["乐山鲜知味钵钵鸡（草堂北路店）","成都市青羊区草堂北路16号附18号 乐山鲜知味钵钵鸡","午餐约70元／两人；钵钵鸡搭配鸡汤饭，优先沟通外摆或靠边大厅，提前确认辅助犬接待。"],"ifs":["IFS国金中心／春熙路户外区域","成都IFS国际金融中心","以春熙路公共步行街区域为主；IFS已确认可携带服务犬，商场内个别店铺或活动另行确认。"],"east":["东郊记忆","成都市成华区东郊记忆","已确认园区为完全开放式宠物友好空间，无需报备；室内展馆和个别活动另按现场规定。"],"maoji":["毛记和意冒菜（解放西街店）","成都市金牛区解放西街9号附2号 毛记和意冒菜","晚餐约100元／两人；招牌冒牛肉。提前确认当晚营业、最后接单及辅助犬同行。"],"lan":["兰桂坊／九眼桥河畔","成都兰桂坊 九眼桥","夜间二选一，仅河边散步，不安排酒吧消费；乘地铁往返并留意末班车，人流或噪声较大时取消。"],"yulin":["玉林路小酒馆街区","成都玉林路小酒馆","夜间二选一，仅老街慢行，不默认进入小酒馆；乘地铁往返，次日出行或末班时间紧时优先休息。"]};
 Object.assign(places,{"hotel":["汉庭优佳成都宽窄巷子酒店","成都市青羊区西安北路90号附1号 汉庭优佳成都宽窄巷子酒店","已确认入住11月26日至29日，支付宝服务犬入住已确认。11月27日与28日行程从此出发，并在当日游览结束后返回。"],"ctu2":["成都双流国际机场 T2","成都市双流区成都双流国际机场T2","田子辰与支付宝乘CA4304计划抵达T2；订单计划22:55到达，公开班期资料当前约列23:00，以国航当天动态为准。"]});
 places.tfu=["成都天府国际机场 T2","成都市简阳市成都天府国际机场T2","11月29日南方航空 CZ2024 由此出发。田子辰与杨秉尚同班，计划11:40起飞；从酒店乘地铁前往，按航司值机要求和当日地铁运营时间倒推。"];
+Object.assign(places,{"daliAirport":["大理凤仪机场","大理凤仪机场","CZ2024计划11月29日13:00抵达；机场门店取车安排在13:30，需预留领取行李及服务犬同行的时间。"],"daliRental":["大理机场店 · 大众探岳取还车","大理机场店租车取车点 国内到达出口右转约150米 停车场C区3排","11月29日13:30取车，12月3日09:15还车；大众探岳（自动／2.0T／SUV／5座，以门店交付为准），费用¥498。"],"daliHotel":["汉庭大理古城南门酒店","大理古城玉秀路74号 汉庭大理古城南门酒店","11月29日14:00后入住，12月3日14:00前退房；预订金额¥1,076。支付宝服务犬入住状态请向酒店核实。"]});
 const dogAccess={park:{confirmed:true,note:'已确认可携带服务犬。去之前联系人民公园管理处：负责人 13558746053；总机 02886132021。'},tea:{confirmed:true,note:'已确认可携带服务犬。去之前联系人民公园管理处：负责人 13558746053；总机 02886132021。'},ifs:{confirmed:true,note:'已确认可携带服务犬。如现场遇到阻拦，可联系 IFS：028-69396939。商场内个别店铺或活动另行确认。'},east:{confirmed:true,note:'已确认东郊记忆为完全开放式宠物友好园区，无需报备；室内展馆或个别活动另按现场规定。'},kuanzhai:{confirmed:false,note:'待确认服务犬能否进入；出发前向街区管理方核实。此行只逛开放街区，不进入收费小院。'},tower:{confirmed:false,note:'待确认服务犬能否进入户外观景区域；出发前向场地方核实。'},lan:{confirmed:false,note:'待确认服务犬能否进入河畔公共区域及周边场地；仅计划户外散步。'},yulin:{confirmed:false,note:'待确认服务犬能否进入街区及沿途公共空间；此行不默认进入小酒馆。'}};
 const routeSets=[['ctu2','bbq'],['hotel','police','vet','taode','park','tea','kuanzhai','maojiao','hotel'],['hotel','bobo','ifs','east','maoji','hotel'],['hotel','tfu']];
 function airportTransitUrl(){return 'https://uri.amap.com/navigation?from='+encodeURIComponent('104.048583,30.670627,汉庭优佳成都宽窄巷子酒店')+'&to='+encodeURIComponent('104.445083,30.312837,天府机场1号2号航站楼站')+'&mode=bus&policy=2&src=bstozc&callnative=1';}
 function airportTransferPlan(){return '<div class="airport-plan"><h4>11月29日｜赶 11:40 的 CZ2024</h4><div class="airport-times"><div class="airport-time"><strong>06:30</strong>起床喂狗</div><div class="airport-time"><strong>07:00</strong>开始遛狗</div><div class="airport-time"><strong>07:30</strong>遛完、退房出发</div><div class="airport-time"><strong>09:30前</strong>抵达天府机场 T2</div><div class="airport-time"><strong>11:40</strong>航班起飞</div></div><p>建议预留约1小时45分钟乘地铁与步行接驳：从酒店前往地铁站，按高德当天推荐换乘，经火车南站接18号线至天府机场1/2航站楼站，再步行进入T2。出发前一晚再核对路线、首班与实际运行时间。</p><p>倒推依据：南航建议国内航班至少提前2小时到机场，11:40起飞对应09:40；为辅助犬同行和换乘多留余量，安排09:30前到达。南航在成都天府的国内航班值机截止为起飞前45分钟，即10:55；这是柜台截止时间，不是建议到达时间。</p><a class="nav-link" href="'+airportTransitUrl()+'" target="_blank" rel="noopener">📍 高德地铁规划：酒店 → 天府机场 T2</a><p>酒店允许16:00前退房；此航班需要早上退房离店，不能等到下午。</p><p><a href="https://www.csair.cn/cn/tourguide/faq/airport/boarding.shtml" target="_blank" rel="noopener">南航：国内航班建议提前2小时到达</a>　·　<a href="https://xiongan.csair.com/cn/tourguide/airport_service/domestic/transfer-time-limit/" target="_blank" rel="noopener">南航：天府值机截止时间</a></p></div>';}
 const routeBranches={1:[{label:'晚餐后可选 · 339电视塔户外夜景',ids:['maojiao','tower','hotel']}],2:[{label:'晚间二选一 · 兰桂坊／九眼桥河畔',ids:['maoji','lan','hotel']},{label:'晚间二选一 · 玉林路街区',ids:['maoji','yulin','hotel']}]};
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function mapUrl(id){return 'https://uri.amap.com/search?keyword='+encodeURIComponent(places[id][1])+'&city=成都&src=bstozc&callnative=1';}
+function mapUrl(id){const city=id.startsWith('dali')?'大理':'成都';return 'https://uri.amap.com/search?keyword='+encodeURIComponent(places[id][1])+'&city='+encodeURIComponent(city)+'&src=bstozc&callnative=1';}
 function dogAccessNote(id){const a=dogAccess[id];if(!a)return '';return '<div class="dog-access '+(a.confirmed?'confirmed':'pending')+'"><strong>服务犬入场 · '+(a.confirmed?'已确认':'待确认')+'</strong><p>'+esc(a.note)+'</p></div>';}
 function placeCard(id){const p=places[id],a=dogAccess[id],status=a?(a.confirmed?' · 服务犬可进入已确认':' · 服务犬进入待确认'):'';return '<details class="place-info"><summary>地点介绍 · '+esc(p[0])+esc(status)+'</summary><p>'+esc(p[2])+'</p>'+dogAccessNote(id)+'<p>'+esc(p[1])+'</p>'+(p[3]?'<p><a href="'+esc(p[3])+'" target="_blank" rel="noopener">查看门店信息来源</a></p>':'')+'<a class="nav-link" href="'+mapUrl(id)+'" target="_blank" rel="noopener">📍 高德地图 · 查找并导航</a></details>';}
 function routeSvg(ids,title){const firstY=62,step=66,lastY=firstY+step*(ids.length-1),height=lastY+30;return '<svg class="map-svg" viewBox="0 0 380 '+height+'" role="img" aria-label="'+esc(title)+'路线顺序图"><text x="16" y="22" class="minor">'+esc(title)+' · 按顺序衔接 · 非比例图</text><path d="M36 '+firstY+' V'+lastY+'" class="route-line"/>'+ids.map((id,i)=>{const y=firstY+i*step,label=places[id][0],hotel=id==='hotel',endpoint=hotel&&(i===0||i===ids.length-1),access=dogAccess[id],food=['bbq','taode','maojiao','bobo','maoji'].includes(id),meta=hotel?(i===0?'入住酒店 · 起点':'入住酒店 · 终点'):access?(access.confirmed?'服务犬可进入 · 已确认':'服务犬能否进入 · 待确认'):food?'餐饮停靠':(id==='police'||id==='vet'?'办事点':'机场'),index=hotel?'住':String(i+1);return '<a href="'+mapUrl(id)+'" target="_blank" rel="noopener" aria-label="打开高德：'+esc(label)+'"><rect x="62" y="'+(y-21)+'" width="300" height="44" rx="13" class="route-stop-card'+(endpoint?' endpoint':'')+'"/><circle cx="36" cy="'+y+'" r="13" class="route-station'+(endpoint?' endpoint':'')+'"/><text x="36" y="'+(y+3)+'" text-anchor="middle" class="route-index">'+index+'</text><text x="76" y="'+(y-4)+'" class="route-label">'+esc(label)+'</text><text x="76" y="'+(y+12)+'" class="route-meta">'+esc(meta)+'</text></a>';}).join('')+'</svg>';}
@@ -457,7 +484,7 @@ function tick(){
  const cn=new Date(now.getTime()+8*3600000);document.getElementById('cnclock').textContent=cn.toISOString().slice(11,19);document.getElementById('today').textContent=cn.toISOString().slice(0,10)+' · 北京时间';
 }
 tick();setInterval(tick,1000);
-const budgetTotal=8000,budgetBooked=654.51,budgetPct=budgetBooked/budgetTotal,budgetCircumference=2*Math.PI*52;
+const budgetTotal=8000,budgetBooked=2228.51,budgetPct=budgetBooked/budgetTotal,budgetCircumference=2*Math.PI*52;
 document.getElementById('budgetPercent').textContent=(budgetPct*100).toFixed(1)+'%';
 document.getElementById('budgetSpent').textContent=budgetBooked.toFixed(2);
 document.getElementById('budgetRemaining').textContent='¥'+(budgetTotal-budgetBooked).toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2});
