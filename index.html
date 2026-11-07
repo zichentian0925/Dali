@@ -42,6 +42,13 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media(prefers-color-scheme:dark){:root:not([data-theme]) .art-sky{fill:#25343b}:root:not([data-theme]) .art-sun{display:none}:root:not([data-theme]) .art-moon{display:block}:root:not([data-theme]) .art-cloud{fill:#66777c;opacity:.5}:root:not([data-theme]) .art-mountain-back{fill:#506a65}:root:not([data-theme]) .art-mountain-front{fill:#344e47}:root:not([data-theme]) .art-city{fill:#735545}:root:not([data-theme]) .art-roof{fill:#473b37}:root:not([data-theme]) .art-water{fill:#42636b}:root:not([data-theme]) .art-water-line{stroke:#91b7b4}:root:not([data-theme]) .art-pagoda{fill:#8e604b}:root:not([data-theme]) .art-tree-back{fill:#405a48}:root:not([data-theme]) .art-tree-front{fill:#2f4839}}
 :root[data-theme="dark"] .art-sky{fill:#25343b}:root[data-theme="dark"] .art-sun{display:none}:root[data-theme="dark"] .art-moon{display:block}:root[data-theme="dark"] .art-cloud{fill:#66777c;opacity:.5}:root[data-theme="dark"] .art-mountain-back{fill:#506a65}:root[data-theme="dark"] .art-mountain-front{fill:#344e47}:root[data-theme="dark"] .art-city{fill:#735545}:root[data-theme="dark"] .art-roof{fill:#473b37}:root[data-theme="dark"] .art-water{fill:#42636b}:root[data-theme="dark"] .art-water-line{stroke:#91b7b4}:root[data-theme="dark"] .art-pagoda{fill:#8e604b}:root[data-theme="dark"] .art-tree-back{fill:#405a48}:root[data-theme="dark"] .art-tree-front{fill:#2f4839}
+</style><style>
+.flight-slider{display:grid;grid-auto-flow:column;grid-auto-columns:min(88%,430px);gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding:2px;padding:2px 2px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.flight-slider>.flight{scroll-snap-align:start;min-width:0}
+.flight-slider::-webkit-scrollbar{height:5px}.flight-slider::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+.flight-controls{display:flex;gap:6px}.flight-controls button{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);font-size:18px;line-height:1}
+.flight-hint{font-size:11px;color:var(--muted);margin:0 2px 8px}
+@media(min-width:760px){.flight-slider{grid-auto-columns:calc((100% - 24px)/3)}}
 </style><script>try{const theme=localStorage.getItem('travel-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(_){}</script>
 </head>
 <body>
@@ -79,13 +86,15 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
   </section>
 
   <section class="section">
-    <div class="section-head"><h2>去程航班</h2><span class="kicker">NOV 26 · OUTBOUND</span></div>
-    <div class="notice">田子辰的中国国际航空 CA4304 已订票，支付宝服务犬同行已确认；杨秉尚的中国南方航空 CZ3413 已确认订票。请以航空公司订单和当日通知为准。</div>
-    <div class="flight-grid" style="margin-top:12px">
+    <div class="section-head"><div><h2>航班信息</h2><span class="kicker">FLIGHT INFORMATION · NOV 26 + NOV 29</span></div><div class="flight-controls" aria-label="航班卡片滑动控制"><button id="flightPrev" type="button" aria-label="向左滑动航班信息">←</button><button id="flightNext" type="button" aria-label="向右滑动航班信息">→</button></div></div>
+    <div class="notice">已整理两段11月26日广州 → 成都航班，以及11月29日田子辰与杨秉尚同乘的 CZ2024 成都 → 大理航班。支付宝搭乘 CA4304 已确认；CZ2024 辅助犬同行手续安排于11月27日办理确认。登机口及当日动态以航司通知为准。</div>
+    <p class="flight-hint">左右滑动或点箭头，查看三段航班</p>
+    <div class="flight-slider" id="flightTrack" aria-label="三段航班信息，可左右滑动">
       <article class="card flight"><div class="who">广州出发：田子辰与支付宝 🐶</div><h3>中国国际航空 CA4304 <span class="status">已订票 · 服务犬同行已确认</span></h3><div class="route"><div><div class="time">20:30</div><div class="airport">广州白云 T3</div></div><div class="plane">✈</div><div style="text-align:right"><div class="time">22:55</div><div class="airport">成都双流 T2</div></div></div><div class="flight-foot">11月26日（周四）｜订单计划约2小时25分钟｜预计抵达 22:55（订单信息）</div><div class="flight-facts"><div class="flight-fact"><span>航程 / 订单时长</span>约 1,390 km / 2小时25分</div><div class="flight-fact"><span>值机柜台</span>C、D（订单截图）</div><div class="flight-fact"><span>登机口</span>待定 · 预计18:30前确认</div><div class="flight-fact"><span>登机方式</span>待定 · App显示靠廊桥概率98%（估算）</div><div class="flight-fact"><span>机上餐食</span>点心餐（订单信息）</div><div class="flight-fact"><span>托运行李额</span>30 kg（订单信息）</div><div class="flight-fact"><span>执飞机型</span>票面未显示 · 以国航当日动态为准</div><div class="flight-fact"><span>辅助犬同行</span>已确认 · 支付宝与田子辰同行</div></div><p class="flight-sources">出发当天的登机口、机型与实时动态以国航及机场通知为准。<br><a href="https://www.airchina.com.cn/flight/query-services/flight-dynamics" target="_blank" rel="noopener">国航航班动态查询</a>　·　<a href="https://hk.trip.com/flights/status-ca4304/" target="_blank" rel="noopener">CA4304 航班信息参考</a></p></article>
       <article class="card flight"><div class="who">广州出发：杨秉尚</div><h3>中国南方航空 CZ3413 <span class="status">已确认订票</span></h3><div class="route"><div><div class="time">20:30</div><div class="airport">广州白云 T2</div></div><div class="plane">✈</div><div style="text-align:right"><div class="time">23:00</div><div class="airport">成都双流 T1</div></div></div><div class="flight-foot">11月26日（周四）｜已确认订票｜计划时长约2小时30分钟</div><div class="flight-facts"><div class="flight-fact"><span>航程 / 订单时长</span>航程待确认 / 约2小时30分钟</div><div class="flight-fact"><span>值机柜台</span>D／E／F区，近出发大厅41—43号门</div><div class="flight-fact"><span>登机口</span>待确认 · 以登机牌为准</div><div class="flight-fact"><span>登机方式</span>待确认 · 以当日通知为准</div><div class="flight-fact"><span>机上餐食</span>订单信息未提供</div><div class="flight-fact"><span>托运行李额</span>订单信息未提供</div><div class="flight-fact"><span>执飞机型</span>空客 A321-200 窄体机</div><div class="flight-fact"><span>辅助犬同行</span>支付宝随CA4304与田子辰同行</div></div><p class="flight-sources">建议18:30前到达机场；南航广州值机截止参考19:45，登机口、座位及实时动态以当日通知和登机牌为准。<br><a href="https://www.csair.cn/au/zh/tourguide/airport_service/domestic/transfer-time-limit/" target="_blank" rel="noopener">南航官方办理乘机时间</a></p></article>
+      <article class="card flight"><div class="who">成都出发：田子辰与杨秉尚同行</div><h3>中国南方航空 CZ2024 <span class="status">两人同班</span></h3><div class="route"><div><div class="time">11:40</div><div class="airport">成都天府 T2</div></div><div class="plane">✈</div><div style="text-align:right"><div class="time">13:00</div><div class="airport">大理凤仪机场</div></div></div><div class="flight-foot">11月29日（周日）｜计划飞行1小时20分｜共享航班 OQ2024，由重庆航空实际承运</div><div class="flight-facts"><div class="flight-fact"><span>值机柜台</span>待确认 · 以南航通知为准</div><div class="flight-fact"><span>登机口</span>待确认 · 以登机牌为准</div><div class="flight-fact"><span>执飞机型</span>截图显示空客 A319-100 · 实际机型以当天为准</div><div class="flight-fact"><span>辅助犬同行</span>支付宝手续安排于11月27日办理确认</div></div><p class="flight-sources">航班早于酒店订单所列14:00退房时间，需提前退房；乘地铁前往天府机场的出发时间，按航司值机要求和当天地铁运营信息倒推。</p></article>
     </div>
-    <p class="sub" style="font-size:12px;margin:10px 2px 0">两班计划抵达时间相差约5分钟；两人均到成都双流机场。请留意实际落地、滑行及行李提取时间，不建议把5分钟理解为能够同步出航站楼。</p>
+    <p class="sub" style="font-size:12px;margin:10px 2px 0">11月26日两班计划抵达时间相差约5分钟；田子辰与支付宝抵达T2，杨秉尚抵达T1。两人各自下机和取行李后再汇合。</p>
   </section>
 
   <section class="section">
@@ -103,8 +112,6 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
     <div class="section-head"><h2>出行待办</h2><span class="kicker">PLAIN-TEXT CHECKLIST</span></div>
     <div class="todo">
 <div>11月24日10:00 · 办理支付宝动物检疫证明<small>田子辰携支付宝前往南山区学府路265号农检大楼一楼 · UTC+8</small></div>
-<div>11月24日20:00前 · CA4304 辅助犬同行 · 已确认<small>田子辰与支付宝乘CA4304；服务犬同行已确认</small></div>
-      <div>田子辰与支付宝 · CA4304<small>11月26日 20:30 广州白云T3 → 22:55 成都双流T2；已订票，服务犬同行已确认</small></div>
       <div>补充12月3日返程航班<small>核对最终抵达广州的时间与机场</small></div>
       <div>成都酒店与服务犬入住<small>已预订汉庭优佳成都宽窄巷子酒店，支付宝服务犬入住已确认；订单信息不公开展示</small></div>
       <div>11月27日 · 办理并确认 CZ2024 辅助犬同行<small>为11月29日成都天府T2 → 大理凤仪机场的行程，联系南航确认并办理支付宝的服务犬同行手续；办理完成后再更新状态。</small></div>
@@ -433,6 +440,9 @@ days.forEach((d,i)=>{const label=i===0?'抵达日':'Day'+i;const b=document.crea
 function selectDay(i){[...tabs.children].forEach((b,j)=>{b.classList.toggle('active',i===j);b.setAttribute('aria-pressed',String(i===j));});[...panels.children].forEach((p,j)=>p.classList.toggle('active',i===j));showRoute(i);}
 function showRoute(i){const out=document.getElementById('routeOverview');if(i==='overview'){out.innerHTML='<p class="sub">11月27日和28日从已入住酒店出发并返回；29日从酒店乘地铁前往天府机场T2。线路、出口和运营时间以当日信息为准。</p>'+[1,2,3].map(j=>'<details class="route-overview-day"><summary>'+days[j][0]+' · '+(j===3?'酒店出发／前往机场':'入住酒店出发／返回')+'</summary>'+routeSvg(routeSets[j],days[j][0])+branchRoutes(j)+'</details>').join('');return;}if(i==='all'){out.innerHTML=routeSets.map((ids,j)=>'<details class="route-overview-day"><summary>'+days[j][0]+'</summary>'+routeSvg(ids,days[j][0])+branchRoutes(j)+'</details>').join('');return;}out.innerHTML=routeSets[i]?routeSvg(routeSets[i],days[i][0])+branchRoutes(i)+'<p class="sub">'+(i===2?'主线和晚间备选均回入住酒店；兰桂坊与玉林路只选一处。':i===1?'主线从入住酒店出发并回到酒店；339为饭后可选支线。':i===3?'从酒店乘地铁前往成都天府机场T2，按航班和当日运营信息倒推出发时间；酒店需提前退房。':'计划落地接近地铁末班，夜宵建议改到其他夜晚。')+'</p>':'<p class="sub">当天路线待交通与景点确认后补充。</p>'; }
 showRoute('overview');
+const flightTrack=document.getElementById('flightTrack');
+document.getElementById('flightPrev').onclick=()=>flightTrack.scrollBy({left:-flightTrack.clientWidth*.9,behavior:'smooth'});
+document.getElementById('flightNext').onclick=()=>flightTrack.scrollBy({left:flightTrack.clientWidth*.9,behavior:'smooth'});
 const departures=[['countdown',new Date('2026-11-26T20:30:00+08:00')],['countdownYang',new Date('2026-11-26T20:30:00+08:00')]];
 function tick(){
  const now=new Date();
