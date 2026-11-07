@@ -57,6 +57,8 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 .scenic-gallery{margin:14px 0 8px}.scenic-gallery h3{font-size:13px;margin:0 0 8px}.scenic-strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(170px,43%);gap:10px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}.scenic-card{scroll-snap-align:start;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;background:var(--paper);color:var(--ink);box-shadow:var(--shadow)}.scenic-photo{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--green2)}.scenic-card strong{display:block;padding:9px 10px 2px;font-size:12px;line-height:1.35}.scenic-card small{display:block;padding:0 10px 5px;color:var(--muted);font-size:9px;line-height:1.4}.scenic-card .scenic-caption{font-size:10px}.scenic-card .photo-credit{padding-top:2px}.scenic-card .photo-credit a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}.scenic-card .photo-note{padding-top:0;color:var(--orange);font-size:9px}
 .place-dialog{width:min(560px,calc(100% - 24px));max-height:min(88dvh,760px);padding:0;border:1px solid var(--line);border-radius:22px;background:var(--paper);color:var(--ink);box-shadow:0 24px 80px rgba(0,0,0,.26)}.place-dialog::backdrop{background:rgba(18,25,22,.56);backdrop-filter:blur(3px)}.place-dialog-inner{position:relative;padding:18px;overflow:auto;max-height:88dvh}.dialog-close{position:absolute;right:13px;top:13px;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;z-index:2}.place-hero-art{margin:-18px -18px 14px;overflow:hidden;border-radius:21px 21px 0 0}.place-dialog-title{font-size:20px;margin:0 44px 8px 0}.place-location{display:flex;align-items:flex-start;gap:9px;padding:10px 11px;background:var(--green2);border-radius:12px;font-size:12px;margin:10px 0}.place-location b{white-space:nowrap}.place-location a{color:var(--blue)}.place-section{padding:10px 0;border-bottom:1px solid var(--line)}.place-section h4{font-size:12px;margin:0 0 4px}.place-section p{font-size:12px;color:var(--muted);margin:0}.place-dialog .dog-access{margin:10px 0}.place-hours{display:inline-block;padding:5px 8px;background:var(--blue2);color:var(--blue);border-radius:99px;font-size:11px;margin-top:5px}.place-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
 @media(max-width:620px){.weather-grid,.packing-list{grid-template-columns:1fr}.scenic-strip{grid-auto-columns:minmax(155px,56%)}.event-title-row{align-items:flex-start}.day-tabs button{align-items:center}.day-tabs button small{font-size:9px}}
+</style><style>
+.weather-brief{margin:0 0 14px;padding:14px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,var(--paper),var(--blue2))}.weather-brief-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}.weather-brief-head h3{font-size:16px;margin:3px 0 0}.weather-stamp,.weather-scope{display:inline-flex;align-items:center;border-radius:99px;padding:5px 8px;background:var(--paper);border:1px solid var(--line);font-size:10px;color:var(--muted);white-space:nowrap}.weather-caveat{font-size:12px;color:var(--muted);margin:8px 1px 12px}.weather-city-card{display:block;padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}.weather-city-head{display:flex;align-items:center;gap:9px;margin-bottom:8px}.weather-city-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:12px;background:var(--blue2);font-size:18px}.weather-city-head h4{font-size:13px;margin:0}.weather-city-head small{display:block;color:var(--muted);font-size:10px}.weather-fact{display:flex;gap:8px;margin:6px 0;font-size:11px;line-height:1.45}.weather-fact b{flex:0 0 55px;color:var(--green)}.weather-city-card p{font-size:11px;color:var(--muted);margin:7px 0}.weather-city-card a,.weather-source a{color:var(--blue);font-size:11px}.weather-later{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;margin-top:10px;padding:11px 12px;border:1px dashed var(--line);border-radius:13px;background:var(--paper)}.weather-later .weather-city-icon{width:30px;height:30px}.weather-later p{font-size:11px;color:var(--muted);margin:0}.weather-source{font-size:10px;color:var(--muted);margin:10px 2px 0}.weather-source a{font-size:10px}@media(max-width:620px){.weather-brief-head{display:block}.weather-stamp{margin-top:7px}.weather-fact{display:block}.weather-fact b{display:block}}
 </style><script>try{const theme=localStorage.getItem('travel-theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(_){}</script>
 </head>
 <body>
@@ -143,8 +145,28 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
   <section class="section">
     <div class="section-head"><h2>行前提醒</h2><span class="kicker">TRAVEL NOTES</span></div>
     <div class="card">
+      <section class="weather-brief" aria-labelledby="weatherTitle">
+        <div class="weather-brief-head"><div><span class="kicker">中国气象官方趋势 · 离线可读</span><h3 id="weatherTitle">成都与大理｜11.26—12.03</h3></div><span class="weather-stamp">核对于 2026.11.07</span></div>
+        <p class="weather-caveat">目前可用的是国家气候中心区域趋势，不是城市逐日天气；中国天气网的逐日预报尚未覆盖完整行程，因此这里不填猜测的高低温或晴雨。</p>
+        <div class="weather-grid">
+          <article class="weather-city-card">
+            <div class="weather-city-head"><span class="weather-city-icon" aria-hidden="true">☁</span><div><h4>成都 · 11月26—29日</h4><small>国家气候中心趋势覆盖至 12月1日</small></div></div>
+            <div class="weather-fact"><b>气温趋势</b><span>四川大部接近常年同期到偏高 1–2℃。</span></div>
+            <div class="weather-fact"><b>阶段提醒</b><span>11月29日—12月1日有中等强度冷空气影响西南地区北部；成都逐日温度和降雨待短期预报更新。</span></div>
+            <a href="https://www.weather.com.cn/weather15d/101270101.shtml" target="_blank" rel="noopener">查看中国天气网成都预报 ↗</a>
+          </article>
+          <article class="weather-city-card">
+            <div class="weather-city-head"><span class="weather-city-icon" aria-hidden="true">☀</span><div><h4>大理 · 11月29日—12月1日</h4><small>区域气候趋势，不等于每日实况</small></div></div>
+            <div class="weather-fact"><b>气温趋势</b><span>云南大部接近常年同期到偏高 1–2℃。</span></div>
+            <div class="weather-fact"><b>降水趋势</b><span>滇西北降水较常年偏少 2–5 成；大理当地逐日天气仍待临近确认。</span></div>
+            <a href="https://wx.weather.com.cn/mweather15d/101290201.shtml" target="_blank" rel="noopener">查看中国天气网大理预报 ↗</a>
+          </article>
+        </div>
+        <div class="weather-later"><span class="weather-city-icon" aria-hidden="true">◷</span><p><b>12月2—3日：城市逐日预报待更新。</b>国家气候中心11月6日发布的冬季趋势称，2026年12月全国气温总体接近常年同期到略偏低；这是季节尺度信息，不能替代大理当日预报。</p></div>
+        <p class="weather-source">来源：<a href="https://www.ncc-cma.net/channel/news/newsid/101095" target="_blank" rel="noopener">国家气候中心《11月16日至12月1日气候趋势预测》（11月2日）</a> · <a href="https://www.ncc-cma.net/channel/news/newsid/101096" target="_blank" rel="noopener">《2026/2027年冬季气候趋势预测》（11月6日）</a>。临近出发再点上方城市入口核对滚动预报；此卡片本身无需联网，可离线查看。</p>
+      </section>
       <ul style="padding-left:19px;margin:0;font-size:13px">
-        <li>成都与大理的天气、温差和降雨情况请临近出发再核对；大理早晚温差通常需要额外准备保暖衣物。</li>
+        <li>上方天气卡片是截至11月7日可查到的官方区域趋势；出发前请查看城市逐日预报和临近预警。</li>
         <li>成都双流机场与成都天府机场是不同机场，接机、住宿和后续交通务必以最终客票为准。</li>
         <li>两班航班虽显示相近抵达时间，仍需预留下机、滑行、行李提取和航站楼内步行时间。</li>
         <li>景点开放时间、预约规则及交通班次需以官方最新信息为准；本手册暂不虚构未提供的预约或订单信息。</li>
