@@ -65,6 +65,18 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 <style>
 .opening-notice{margin:12px 0}.hours-source{font-size:11px;color:var(--muted);margin-top:5px}.hours-source a{color:var(--blue)}.place-hours-note{font-size:12px;color:var(--muted);margin:7px 0}.place-hours-note strong{color:var(--ink)}
 </style>
+<style>
+/* 行前物品以行程打卡卡片的视觉语言呈现 */
+.packing-list label{position:relative;align-items:center;min-height:76px;padding:11px 12px;background:var(--paper);transition:opacity .25s ease,background .25s ease,border-color .25s ease}
+.packing-list input{appearance:none;width:19px;height:19px;flex:0 0 19px;border:1.5px solid var(--line);border-radius:50%;background:var(--bg);margin:0;display:grid;place-items:center;cursor:pointer}
+.packing-list input:checked{background:var(--green);border-color:var(--green)}
+.packing-list input:checked:after{content:"✓";color:var(--paper);font-size:12px;font-weight:800;line-height:1}
+.packing-list label:focus-within{outline:2px solid var(--blue);outline-offset:2px}
+.packing-list label.packed{opacity:.58;background:var(--green2);border-color:var(--green)}
+.packing-stamp{flex:0 0 auto;padding:5px 8px;border:1px solid var(--line);border-radius:99px;color:var(--muted);background:var(--paper);font-family:inherit;font-size:10px;font-weight:600;line-height:1.2;white-space:nowrap}
+.packing-list label.packed .packing-stamp{border-color:var(--green);background:var(--paper);color:var(--green)}
+@media(max-width:620px){.packing-list label{min-height:68px}}
+</style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
@@ -178,8 +190,8 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
       </ul>
       <div class="notice opening-notice"><b>景点开放时间核对 · 11月/12月计划</b><br>海舌：免费预约仅限上午09:00–12:00；下午必须购买店内下午茶套餐并凭订单入园。预案A为15:05下午茶套餐入园，预案B为抢到上午免费预约后前往。理想邦免费公共游览区17:30停止入园，已调整为16:00到、16:40结束、17:00返程。其余开放时间见对应景点行程和介绍卡；临时公告优先。</div>
       <section class="packing-checklist" aria-labelledby="packingTitle">
-        <div class="packing-head"><div><span class="kicker">出门前 · CHECKLIST</span><h3 id="packingTitle">一家三口的随身清单</h3></div><span class="packing-progress" id="packingProgress" role="status" aria-live="polite">0 / 17 已收好</span></div>
-        <p class="packing-intro">按类别逐项勾选；状态保存在这台手机的浏览器里，离线也能继续核对。</p>
+        <div class="packing-head"><div><span class="kicker">出门前 · CHECK-IN</span><h3 id="packingTitle">一家三口的随身清单</h3></div><span class="packing-progress" id="packingProgress" role="status" aria-live="polite">0 / 17 已收好</span></div>
+        <p class="packing-intro">点一下「○ 打卡」标记已备好；完成项会变淡并显示「✅ 已收好」，进度保存在本机，断网也能继续核对。</p>
         <div class="packing-group"><h4>证件与电子 <span>先收进随身包</span></h4><div class="packing-list">
           <label><input type="checkbox" data-pack-key="id-cards"><span><b>两人身份证与登机信息</b><small>客票、登机牌及航班截图；出发前再核对航站楼。</small></span></label>
           <label><input type="checkbox" data-pack-key="booking-records"><span><b>酒店、租车订单与驾驶证</b><small>订单截图即可；不在公开页面展示订单号或入住码。</small></span></label>
@@ -701,9 +713,17 @@ showRoute('overview');
   };
   inputs.forEach(input=>{
     input.checked=state[input.dataset.packKey]===true;
-    input.closest('label').classList.toggle('packed',input.checked);
+    const label=input.closest('label');
+    label.classList.toggle('packed',input.checked);
+    const stamp=document.createElement('em');
+    stamp.className='packing-stamp';
+    stamp.setAttribute('aria-hidden','true');
+    stamp.textContent=input.checked?'✅ 已收好':'○ 打卡';
+    label.appendChild(stamp);
     input.addEventListener('change',()=>{
-      input.closest('label').classList.toggle('packed',input.checked);
+      const label=input.closest('label');
+      label.classList.toggle('packed',input.checked);
+      label.querySelector('.packing-stamp').textContent=input.checked?'✅ 已收好':'○ 打卡';
       state[input.dataset.packKey]=input.checked;
       try{localStorage.setItem(storageKey,JSON.stringify(state));}catch(_){canStore=false;}
       refresh();
