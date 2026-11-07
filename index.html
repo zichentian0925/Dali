@@ -81,6 +81,23 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 .prep-head-meta{display:grid;justify-items:end;gap:5px}.prep-progress{display:inline-flex;align-items:center;padding:4px 8px;border-radius:99px;background:var(--green2);color:var(--green);font-size:11px;font-weight:650;white-space:nowrap}.prep-checkin[aria-pressed="true"]{border-color:var(--green);background:var(--green2);color:var(--green)}
 @media(max-width:480px){.prep-head-meta{align-items:end}.prep-progress{font-size:10px}}
 </style>
+
+<style>
+.day-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:2px 0 12px;overflow:visible}
+.day-tabs button{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:7px;width:100%;min-width:0;max-width:none;min-height:76px;padding:11px 12px;border:1px solid var(--line);border-radius:15px;text-align:left;white-space:normal}
+.day-tab-date{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:10px;letter-spacing:.08em;color:var(--muted);line-height:1.2}
+.day-tab-date b{font-size:10px;font-weight:750;letter-spacing:.1em}
+.day-tab-date time{font-variant-numeric:tabular-nums;font-size:12px;color:var(--ink);font-weight:700;letter-spacing:0}
+.day-tabs button small{display:block;max-width:none;min-height:2.65em;overflow:hidden;text-overflow:ellipsis;white-space:normal;font-size:11px;line-height:1.35;opacity:.9}
+.day-tabs button.active .day-tab-date,.day-tabs button.active .day-tab-date time{color:var(--paper)}
+.day-title{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin:8px 0 14px}
+.day-heading-copy{display:grid;gap:4px;min-width:0}
+.day-heading-copy strong{font-size:11px;letter-spacing:.11em;color:var(--muted)}
+.day-subtitle{font-size:18px;font-weight:700;line-height:1.35}
+.day-title-side{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;flex:0 0 auto}
+@media(min-width:621px) and (max-width:880px){.day-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.day-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.day-tabs button{min-height:74px;padding:10px}.day-tabs button small{font-size:10px}.day-title{align-items:flex-start}.day-title-side{flex-direction:column;align-items:flex-end;gap:5px}.day-subtitle{font-size:16px}}
+</style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
@@ -227,7 +244,7 @@ const days=[
  [
   "11月26日",
   "周四",
-  "广州 → 成都",
+  "广州 → 成都 · 落地会合",
   "田子辰与大儿子（支付宝）搭乘CA4304，于20:30从广州白云T3起飞，计划22:55抵达成都双流T2；杨秉尚搭乘CZ3413，于20:30从广州白云T2出发，计划23:00抵达成都双流T1。两班分别抵达后在成都汇合，夜宵以门店仍接单且体力允许为前提。",
   [
    [
@@ -274,7 +291,7 @@ const days=[
  [
   "11月27日",
   "周五",
-  "办事日 + 城西 + 市中心",
+  "成都 · 办事与市区",
   "从已入住的汉庭优佳成都宽窄巷子酒店出发：09:00犀浦校园路派出所办理居住证续签、犬证；办完乘地铁前往郫都区畜牧兽医服务中心（郫筒新南街153号）办理动物检疫合格证明。尽量11:30前出发进城；若手续延迟，先办完再顺延午餐、缩短下午活动，保留固定晚餐。饭后339可选，结束后乘地铁回同一酒店；全程固定地铁、近距离步行衔接。",
   [
    [
@@ -368,7 +385,7 @@ const days=[
  [
   "11月28日",
   "周六",
-  "市中心 → 东郊记忆 → 城北收尾",
+  "成都 · 市中心与东郊",
   "从汉庭优佳成都宽窄巷子酒店出发：草堂北路午餐 → IFS／春熙路户外街区 → 东郊记忆 → 解放西街晚餐。夜间九眼桥或玉林只选一个，也可以全部取消；无论夜间是否加游，最后乘地铁回已确认的宽窄巷子酒店。全日市内交通固定地铁，近距离步行衔接，返程留意末班车。",
   [
    [
@@ -433,7 +450,7 @@ const days=[
  [
   "11月29日",
   "周日",
-  "大理 Day1｜落地缓冲日 · 机场 → 古城南门酒店 → 洱海公园 → 大理古城",
+  "成都 → 大理 · 落地与洱海",
   "06:30给大儿子喂早饭，07:00–07:30遛狗，07:30从成都酒店退房乘地铁去天府T2，目标09:30前到达；11:40乘CZ2024，13:00抵达大理凤仪机场。取行李、补水后，13:30取车，约14:00自驾去古城南门酒店；14:40入住后午休约1.5小时。16:20出发去洱海公园，16:50–18:10湖边慢走；18:40回大理古城，逛人民路和红龙井外围，避开拥挤窄巷；19:50–21:00晚餐加酒馆。洱海公园、大理古城及酒店均已确认大儿子可进入／入住。",
   [
    ["07:30","退房｜乘地铁前往成都天府机场T2","06:30起床给大儿子喂早饭，07:00–07:30遛狗；随后退房，按高德地铁方案出发，换乘与站内步行以当天导航为准。","地铁 · 机场出发","tfu","地铁+步行 · 预留约2小时"],
@@ -501,7 +518,7 @@ const days=[
  [
   "11月30日",
   "周一",
-  "大理 · 11.30 海西线｜海舌预约双方案",
+  "大理 · 海西线",
   "海舌免费预约名额仅限上午09:00–12:00；下午必须购买店内下午茶套餐并凭订单入园。临行前一天核对预约结果与是否购买套餐，再选择预案A或B：接受套餐走A，抢到上午免费名额走B。",
   [
    ["13:00","古城南门酒店出发｜预案A","从已入住酒店出发，保守预留约45分钟到廊桥；下午海舌需提前购买店内下午茶套餐，并凭订单入园。","预案A · 需提前购买套餐","daliHotel","自驾 · 约45分钟（保守预留）"],
@@ -517,7 +534,7 @@ const days=[
  [
   "12月1日",
   "周二",
-  "大理 · 12.1 海东线｜双廊 → 小普陀 → 理想邦",
+  "大理 · 海东线",
   "保守堵车版车程：古城南门→双廊约60分钟、双廊→小普陀约30分钟、小普陀→理想邦约35分钟。理想邦公共游览区17:30停止入园；已把到达提前至16:00，只逛免费公共区域，17:00返程，目标18:00前回古城。",
   [
    ["10:30","古城南门酒店出发｜打车去畜牧兽医中心","前往大理古城北门双狮路口畜牧兽医中心，预估车程约10分钟。","办事出发","daliVet","打车 · 约10分钟"],
@@ -537,7 +554,7 @@ const days=[
  [
   "12月2日",
   "周三",
-  "大理 Day4｜苍山洗马潭索道 + 三塔外围",
+  "大理 · 苍山与三塔",
   "定稿路线：古城南门→洗马潭索道下站约25分钟，索道下站→三塔外围约15分钟，三塔外围→古城南门约20分钟，均按保守车程预留。公开参考时段：09:00–14:00上下行，14:00–16:30仅下行；旧版资料需以出发日公告为准。苍山景区已确认大儿子可进入，但洗马潭索道是否允许大儿子乘坐尚未确认；出发前务必致电景区核实。山顶海拔高、风大，带厚外套和饮用水，随时停下休息。19:00前结束户外安排；次日09:15机场还车。",
   [
    [
@@ -605,7 +622,7 @@ const days=[
  [
   "12月3日",
   "周四",
-  "大理 → 广州",
+  "大理 → 广州 · 返程",
   "田子辰与杨秉尚已订同乘南方航空 CZ6278，一家三口计划同行：大理凤仪机场11:25起飞，广州白云T2 13:40抵达，计划飞行2小时15分、航程约1,632公里。截图显示值机柜台1—14、预计09:25开放值机、登机口待定、空客A320-200窄体机。租车预约09:15在大理机场店还车；还车后办理值机、托运及安检。酒店最迟14:00退房，需在赴机场前退房。支付宝返程大儿子同行安排于12月1日到南航申请，结果待确认。",
   [
    [
@@ -695,7 +712,7 @@ function isChecked(dayIndex,eventIndex){try{return localStorage.getItem(checkinK
 function updateDayProgress(dayIndex,panel=panels.children[dayIndex]){const events=activeEvents(dayIndex),done=events.reduce((n,_,i)=>n+(isChecked(dayIndex,i)?1:0),0),badge=panel.querySelector('.day-progress');if(badge){badge.textContent=done+' / '+events.length+' 项';badge.setAttribute('aria-label','当日行程完成进度 '+done+' / '+events.length);}}
 function attachCheckins(panel,dayIndex){panel.querySelectorAll('.checkin-button').forEach(button=>button.addEventListener('click',()=>{const index=Number(button.dataset.eventIndex),next=button.getAttribute('aria-pressed')!=='true',event=button.closest('.event');try{if(next)localStorage.setItem(checkinKey(dayIndex,index),'1');else localStorage.removeItem(checkinKey(dayIndex,index));}catch{}button.setAttribute('aria-pressed',String(next));button.textContent=next?'✅ 已去过':'○ 打卡';event.classList.toggle('checked',next);updateDayProgress(dayIndex,panel);}));}
 function timelineMarkup(dayIndex){const events=activeEvents(dayIndex);return events.map((e,index)=>{const checked=isChecked(dayIndex,index);return '<div class="timecell">'+esc(e[0])+'<br><small>UTC+8</small></div><div class="event'+(checked?' checked':'')+'"><div class="event-title-row">'+(e[4]?'<button type="button" class="place-open" data-place-dialog="'+e[4]+'">'+esc(e[1])+'</button>':'<b>'+esc(e[1])+'</b>')+'<button type="button" class="checkin-button" data-event-index="'+index+'" aria-pressed="'+checked+'">'+(checked?'✅ 已去过':'○ 打卡')+'</button></div><p>'+esc(e[2])+'</p><div class="event-tags"><span class="tag">'+esc(e[3])+'</span>'+semanticTagsMarkup(e)+'</div>'+(e[5]?'<div class="travel-pill">'+esc(e[5])+'</div>':'')+(e[4]&&placeHours[e[4]]?'<span class="place-hours">开放 · '+esc(placeHours[e[4]].short)+'</span>':'')+(e[4]?placeCard(e[4]):'')+(e[6]?'<p><a href="'+esc(e[6])+'" target="_blank" rel="noopener">核对来源</a></p>':'')+'</div>';}).join('');}
-days.forEach((d,i)=>{const label=i===0?'抵达日':'Day'+i;const b=document.createElement('button');b.innerHTML='<span>'+label+' '+esc(d[0])+'</span><small>'+esc(d[2])+'</small>';b.className=i===0?'active':'';b.setAttribute('aria-pressed',String(i===0));b.onclick=()=>selectDay(i);tabs.appendChild(b);const p=document.createElement('div');p.className='card day-panel'+(i===0?' active':'');const eventCount=activeEvents(i).length;p.innerHTML='<div class="day-title"><strong>'+label+' · '+esc(d[2])+'</strong><span class="sub">'+esc(d[0]+' '+d[1])+'</span><span class="day-progress" aria-label="当日行程完成进度">0 / '+eventCount+' 项</span></div>'+clothesBlock(i)+'<p class="sub day-summary" style="font-size:13px">'+esc(d[3])+'</p>'+(i===4?haishiPlanPicker():'')+routeBlock(i)+scenicGallery(i)+'<div class="timeline">'+timelineMarkup(i)+'</div>';panels.appendChild(p);attachCheckins(p,i);updateDayProgress(i,p);if(i===4)attachHaishiPlanButtons(p);});
+days.forEach((d,i)=>{const date=d[0].replace('月','/').replace('日','');const b=document.createElement('button');b.innerHTML='<span class="day-tab-date"><b>DAY '+i+'</b><time>'+esc(date)+'</time></span><small>'+esc(d[2])+'</small>';b.className=i===0?'active':'';b.setAttribute('aria-pressed',String(i===0));b.onclick=()=>selectDay(i);tabs.appendChild(b);const p=document.createElement('div');p.className='card day-panel'+(i===0?' active':'');const eventCount=activeEvents(i).length;p.innerHTML='<div class="day-title"><div class="day-heading-copy"><strong>DAY '+i+' · '+esc(date)+'</strong><span class="day-subtitle">'+esc(d[2])+'</span></div><div class="day-title-side"><span class="sub">'+esc(d[1]+' · UTC+8')+'</span><span class="day-progress" aria-label="当日行程完成进度">0 / '+eventCount+' 项</span></div></div>'+clothesBlock(i)+'<p class="sub day-summary" style="font-size:13px">'+esc(d[3])+'</p>'+(i===4?haishiPlanPicker():'')+routeBlock(i)+scenicGallery(i)+'<div class="timeline">'+timelineMarkup(i)+'</div>';panels.appendChild(p);attachCheckins(p,i);updateDayProgress(i,p);if(i===4)attachHaishiPlanButtons(p);});
 function selectDay(i){[...tabs.children].forEach((b,j)=>{b.classList.toggle('active',i===j);b.setAttribute('aria-pressed',String(i===j));});[...panels.children].forEach((p,j)=>p.classList.toggle('active',i===j));showRoute(i);}
 function selectHaishiPlan(plan){if(plan!=='A'&&plan!=='B')return;activeHaishiPlan=plan;routeSets[4]=plan==='A'?['daliHotel','daliLangqiao','daliHaishi','daliXizhou','daliHotel']:['daliHotel','daliHaishi','daliLangqiao','daliXizhou','daliHotel'];const panel=panels.children[4];panel.querySelector('.haishi-plan-switch').outerHTML=haishiPlanPicker();attachHaishiPlanButtons(panel);panel.querySelector('.timeline').innerHTML=timelineMarkup(4);attachCheckins(panel,4);updateDayProgress(4,panel);const map=panel.querySelector('.daily-map');if(map)map.outerHTML=routeBlock(4);showRoute(4);}
 function showRoute(){/* 路线图已嵌入对应日期卡片 */}
