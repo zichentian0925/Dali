@@ -77,6 +77,10 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
 .packing-list label.packed .packing-stamp{border-color:var(--green);background:var(--paper);color:var(--green)}
 @media(max-width:620px){.packing-list label{min-height:68px}}
 </style>
+<style>
+.prep-head-meta{display:grid;justify-items:end;gap:5px}.prep-progress{display:inline-flex;align-items:center;padding:4px 8px;border-radius:99px;background:var(--green2);color:var(--green);font-size:11px;font-weight:650;white-space:nowrap}.prep-checkin[aria-pressed="true"]{border-color:var(--green);background:var(--green2);color:var(--green)}
+@media(max-width:480px){.prep-head-meta{align-items:end}.prep-progress{font-size:10px}}
+</style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
@@ -102,7 +106,7 @@ main{padding:18px 0 60px}.section{margin:24px 0}.section-head{display:flex;align
   <div class="budget-main"><div class="budget-kicker">一家三口的旅行小金库 · 不含飞机</div><div class="budget-numbers"><div><div class="budget-total">¥8,000</div><div class="budget-left">总预算</div></div><div style="text-align:right"><div class="budget-total" id="budgetRemaining">¥1,151.49–1,651.49</div><div class="budget-left">预计剩余 · 超预算 ¥0</div></div></div><div class="budget-bar" role="progressbar" aria-label="已预订与计划支出占预算比例" aria-valuemin="0" aria-valuemax="8000" aria-valuenow="6848.51" aria-valuetext="预计总支出 ¥6,348.51 至 ¥6,848.51；预计剩余 ¥1,151.49 至 ¥1,651.49"><span id="budgetBarHotel"></span><span id="budgetBarRental"></span><span id="budgetBarTicket"></span><span id="budgetBarFuel"></span><span id="budgetBarParking"></span><span id="budgetBarFood"></span><span id="budgetBarFoodBuffer"></span></div><div class="budget-booked-total">已预订合计 ¥<b><span id="budgetSpent">2,228.51</span></b></div><div class="budget-detail" aria-label="预算颜色图例"><span class="budget-legend-item"><i class="budget-swatch hotel" aria-hidden="true"></i><span><b>绿色｜酒店</b> ¥1,730.51</span></span><span class="budget-legend-item"><i class="budget-swatch rental" aria-hidden="true"></i><span><b>浅绿｜租车</b> ¥498</span></span><span class="budget-legend-item"><i class="budget-swatch ticket" aria-hidden="true"></i><span><b>蓝色｜索道票预留</b> ¥520</span></span><span class="budget-legend-item"><i class="budget-swatch fuel" aria-hidden="true"></i><span><b>灰蓝｜油费预留</b> ¥450</span></span><span class="budget-legend-item"><i class="budget-swatch parking" aria-hidden="true"></i><span><b>深蓝灰｜停车费预留</b> ¥150</span></span><span class="budget-legend-item"><i class="budget-swatch food" aria-hidden="true"></i><span><b>橙色｜餐饮酒水预留</b> ¥3,000</span></span><span class="budget-legend-item"><i class="budget-swatch food-buffer" aria-hidden="true"></i><span><b>紫红｜餐饮浮动上限</b> +¥500（至¥3,500）</span></span></div><p class="budget-note"><b>预计总支出 ¥6,348.51–6,848.51，预计还剩 ¥1,151.49–1,651.49；按当前预估不超预算。</b>已订：成都住宿 ¥654.51 + 大理住宿 ¥1,076 + 租车 ¥498 = ¥2,228.51。计划预留：洗马潭索道双人票 ¥520；油费 ¥450 + 停车 ¥150 = ¥600；13次午餐／晚餐按约 ¥200／餐为 ¥2,600，已包含在餐饮与酒水总预留 ¥3,000–3,500 内，不重复相加。机票不计入；实际消费后预算会相应变化。</p></div>
 </section>
 <div class="card section"><strong>🐶 同行伙伴 · 支付宝</strong><p class="sub" style="margin-bottom:0">支付宝是我们家的大儿子，已确认与田子辰搭乘11月26日 CA4304 从广州前往成都；大儿子同行已确认。抵达后与杨秉尚汇合，一家三口共同参与全部行程。</p></div>
-<section class="section"><div class="section-head"><h2>11月24日 · 行前准备</h2><span class="kicker">2026年 · 周二 · UTC+8</span></div><div class="card"><div class="timeline"><div class="timecell">10:00<br><small>UTC+8</small></div><div class="event"><b>田子辰带支付宝办理动物检疫证明</b><p>前往南山动物检疫申报点，开具动物检疫证明。</p><p><a href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E5%AD%A6%E5%BA%9C%E8%B7%AF265%E5%8F%B7%E5%86%9C%E6%A3%80%E5%A4%A7%E6%A5%BC&city=深圳&src=bstozc&callnative=1" target="_blank" rel="noopener">📍 南山区学府路265号农检大楼一楼 · 打开高德地图</a></p><span class="tag">大儿子出行</span><span class="tag">行前办理</span></div><div class="timecell">已确认<br><small>大儿子同行</small></div><div class="event"><b>CA4304 大儿子同行 · 已确认</b><p>田子辰与支付宝搭乘11月26日中国国际航空 CA4304，大儿子同行已确认。</p><span class="tag">已确认</span><span class="tag">已完成</span></div></div></div></section>
+<section class="section"><div class="section-head"><h2>11月24日 · 行前准备</h2><div class="prep-head-meta"><span class="kicker">2026年 · 周二 · UTC+8</span><span class="prep-progress" id="preparationProgress" role="status" aria-live="polite">0 / 2 项</span></div></div><div class="card"><div class="timeline"><div class="timecell">10:00<br><small>UTC+8</small></div><div class="event"><b>田子辰带支付宝办理动物检疫证明</b><p>前往南山动物检疫申报点，开具动物检疫证明。</p><p><a href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%8D%97%E5%B1%B1%E5%8C%BA%E5%AD%A6%E5%BA%9C%E8%B7%AF265%E5%8F%B7%E5%86%9C%E6%A3%80%E5%A4%A7%E6%A5%BC&city=深圳&src=bstozc&callnative=1" target="_blank" rel="noopener">📍 南山区学府路265号农检大楼一楼 · 打开高德地图</a></p><span class="tag">大儿子出行</span><span class="tag">行前办理</span></div><div class="timecell">已确认<br><small>大儿子同行</small></div><div class="event"><b>CA4304 大儿子同行 · 已确认</b><p>田子辰与支付宝搭乘11月26日中国国际航空 CA4304，大儿子同行已确认。</p><span class="tag">已确认</span><span class="tag">已完成</span></div></div></div></section>
   <section class="section">
     <div class="section-head"><h2>此刻关注</h2><span class="kicker">NEXT UP</span></div>
     <div class="focus-events">
@@ -759,5 +763,26 @@ btn.onclick=()=>{const next=isDark()?'light':'dark';root.dataset.theme=next;try{
 systemTheme.addEventListener('change',updateTheme);
 updateTheme();
 if('serviceWorker' in navigator&&location.protocol==='https:')window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
+</script>
+<script>
+(()=>{
+  const section=[...document.querySelectorAll('main section.section')].find(node=>node.querySelector('.section-head h2')?.textContent.includes('11月24日 · 行前准备'));
+  if(!section)return;
+  const events=[...section.querySelectorAll('.timeline > .event')];
+  const progress=document.getElementById('preparationProgress');
+  const key='southwest-trip-preparation-checkins-v1';
+  let state={};
+  try{state=JSON.parse(localStorage.getItem(key)||'{}')||{};}catch(_){state={};}
+  const refresh=()=>{const done=events.filter((_,i)=>state[i]===true).length;if(progress)progress.textContent=done+' / '+events.length+' 项已完成';};
+  events.forEach((item,index)=>{
+    const title=item.querySelector(':scope > b');
+    if(!title)return;
+    const row=document.createElement('div');row.className='event-title-row';
+    const button=document.createElement('button');button.type='button';button.className='checkin-button prep-checkin';button.setAttribute('aria-pressed',String(state[index]===true));button.textContent=state[index]?'✅ 已完成':'○ 打卡';
+    item.insertBefore(row,title);row.append(title,button);item.classList.toggle('checked',state[index]===true);
+    button.addEventListener('click',()=>{state[index]=button.getAttribute('aria-pressed')!=='true';const done=state[index]===true;item.classList.toggle('checked',done);button.setAttribute('aria-pressed',String(done));button.textContent=done?'✅ 已完成':'○ 打卡';try{localStorage.setItem(key,JSON.stringify(state));}catch(_){}refresh();});
+  });
+  refresh();
+})();
 </script>
 </body></html>
